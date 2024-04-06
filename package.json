@@ -1,0 +1,29 @@
+{
+  "name": "@snowballtools/docs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "ospec",
+    "build": "lancer build",
+    "init": "lancer init",
+    "dev": "lancer dev"
+  },
+  "engines": {
+    "node": ">=16 <18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lancer/studio": "^0.24.3",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.12",
+    "alpinejs": "^3.10.5",
+    "assert": "^2.0.0",
+    "endent": "^2.1.0",
+    "marked": "^4.0.18",
+    "ospec": "^4.1.6",
+    "tailwindcss": "^3.4.3"
+  }
+}

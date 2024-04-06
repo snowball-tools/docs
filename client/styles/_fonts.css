@@ -1,0 +1,32 @@
+@font-face {
+  /* Regular */
+  font-family: "Informative";
+  font-weight: 400;
+  src: url("https://0xmacro.com/library/fonts/Informative-Regular.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Regular.woff") format("woff");
+}
+@font-face {
+  /* Italic */
+  font-family: "Informative";
+  font-weight: 400;
+  font-style: italic;
+  src: url("https://0xmacro.com/library/fonts/Informative-Italic.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Italic.woff") format("woff");
+}
+@font-face {
+  /* Medium */
+  font-family: "Informative";
+  font-weight: 500;
+  src: url("https://0xmacro.com/library/fonts/Informative-Medium.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Medium.woff") format("woff");
+}
+@font-face {
+  /* Bold */
+  font-family: "Informative";
+  font-weight: 700;
+  src: url("https://0xmacro.com/library/fonts/Informative-Semibold.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Semibold.woff") format("woff");
+}
+
+body {
+  letter-spacing: -0.01em;
+}
+.font-ui {
+  letter-spacing: 0;
+}
