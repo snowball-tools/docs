@@ -1,11 +1,15 @@
-@import './inputs.css';
+@import "./inputs.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import './_prose.css';
+@import "./_prose.css";
 
 body {
-  @apply dark:bg-zinc-600 dark:text-zinc-100;
+  @apply bg-canvas text-zinc-100;
+}
+
+.pesticide {
+  @apply border border-blue-700
 }
 
 .flex-center {
