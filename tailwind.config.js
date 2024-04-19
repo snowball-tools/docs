@@ -255,6 +255,7 @@ module.exports = {
     "./client/**/*.html",
     ...expandJsExtensions("./client/_lib/**/*"),
     ...expandJsExtensions("./client/learn_evm/**/*"),
+    ...expandJsExtensions("./client/docs/**/*"),
     ...expandJsExtensions("./client/library/**/*"),
     ...expandJsExtensions("./lib/**/*"),
     ...expandJsExtensions("./scripts/**/*"),

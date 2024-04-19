@@ -1,17 +1,19 @@
-import * as LearnEVM from './lib/learnevm'
+import * as LearnEVM from "./lib/learnevm";
+export * as Docs from "./lib/docs";
 
 export default {
-  name: "LearnEVM.com – A free, advanced course for Solidity Developers",
-  origin: 'https://learnevm.com',
-  locales: ['en'],
+  name: "Snowballtools Docs – A free, advanced course for Solidity Developers",
+  origin: "https://learnevm.com",
+  locales: ["en"],
 
   static: true,
   locals: {
     LearnEVM,
+    Docs,
   },
   templateTypes: {
     markdown(content) {
-      return LearnEVM.renderChapterContent(content)
-    }
+      return Docs.renderChapterContent(content);
+    },
   },
-}
+};
