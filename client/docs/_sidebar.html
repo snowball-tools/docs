@@ -1,0 +1,101 @@
+<div
+  class="box-content flex flex-col max-w-[calc(80vw)] md:w-[20rem] h-screen fixed left-0 top-0 z-20 md:sticky md:left-auto bg-canvas shadow-card transition-transform overflow-y-auto md:overflow-show pesticide"
+  :class="{ 'translate-x-0': sidebarOpen, '-translate-x-full md:translate-x-0': !sidebarOpen }"
+>
+  <!-- Sidebar Content -->
+  <div class="p-8 flex gap-8 flex-col md:h-0 flex-1">
+    <!-- Logo and Version -->
+    <div class="flex flex-shrink-0">
+      <div class="flex w-full justify-between items-center">
+        <!-- Logo -->
+        <a
+          href="#"
+          class="flex items-center gap-2 text-zinc-900 text-2xl font-semibold"
+        >
+          <div class="h-8 w-8 rounded-md bg-controls-primary"></div>
+          Snowball
+        </a>
+
+        <!-- Version dropdown -->
+        <div class="bg-white rounded-full shadow-card gap-1.5 py-2 px-3">
+          <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Searchbar and Table of Contents -->
+    <div class="flex flex-col gap-8">
+      <!-- Searchbar -->
+      <div
+        class="rounded-xl bg-white w-full shadow-card h-11 px-4 py-3 items-center"
+      >
+        Search
+      </div>
+
+      <!-- //TODO: give selected logic -->
+      <!-- Main navigation -->
+      <div class="flex flex-col gap-1">
+        <!-- Nav item -->
+        <div class="flex py-1.5 px-3 w-full gap-3 items-center">
+          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+          <p class="font-sans font-medium text-sm text-elements-highEm">Home</p>
+        </div>
+
+        <div class="flex py-1.5 px-3 w-full gap-3 items-center">
+          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+          <p class="font-sans font-medium text-sm text-elements-highEm">
+            Changelog
+          </p>
+        </div>
+
+        <div class="flex py-1.5 px-3 w-full gap-3 items-center">
+          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+          <p class="font-sans font-medium text-sm text-elements-highEm">
+            Resources
+          </p>
+        </div>
+      </div>
+
+      <!-- //TODO: replace placeholder with loop using <for> -->
+      <!-- Chapters navigation -->
+      <div class="flex flex-col gap-0.5">
+        <!-- Chapter title -->
+        <div class="flex px-3 py-2">
+          <p class="font-sans font-medium text-sm text-elements-highEm">
+            Getting Started
+          </p>
+        </div>
+        <!-- Chapter main navigation -->
+        <div class="flex flex-col gap-0.5">
+          <!-- Chapter nav item -->
+          <div class="flex py-1.5 px-3 w-full items-center justify-between">
+            <div class="flex gap-3">
+              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+              <p class="font-sans font-medium text-sm text-elements-highEm">
+                Installation
+              </p>
+            </div>
+            <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+          </div>
+          <!-- Chapter nav sub item -->
+          <div class="flex py-1.5 px-3 w-full items-center justify-between">
+            <div class="flex gap-3">
+              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+              <p class="font-sans font-medium text-sm text-elements-highEm">
+                Subpage
+              </p>
+            </div>
+          </div>
+          <div class="flex py-1.5 px-3 w-full items-center justify-between">
+            <div class="flex gap-3">
+              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+              <p class="font-sans font-medium text-sm text-elements-highEm">
+                Another Subpage
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
