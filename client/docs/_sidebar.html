@@ -34,68 +34,212 @@
 
       <!-- //TODO: give selected logic -->
       <!-- Main navigation -->
-      <div class="flex flex-col gap-1">
+      <div class="flex flex-col gap-1 text-elements-highEm">
         <!-- Nav item -->
         <div class="flex py-1.5 px-3 w-full gap-3 items-center">
-          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-          <p class="font-sans font-medium text-sm text-elements-highEm">Home</p>
+          <!-- Home icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.125 6.86196C3.125 5.96772 3.60263 5.14159 4.37759 4.6954L8.75259 2.17646C9.52477 1.73187 10.4752 1.73187 11.2474 2.17646L15.6224 4.6954C16.3974 5.14159 16.875 5.96773 16.875 6.86196V14.3749C16.875 15.7556 15.7557 16.8749 14.375 16.8749H5.625C4.24429 16.8749 3.125 15.7556 3.125 14.3749V6.86196Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M12.5 10.2083C12.5 11.589 11.3807 12.7083 10 12.7083C8.61929 12.7083 7.5 11.589 7.5 10.2083C7.5 8.82754 8.61929 7.70826 10 7.70826C11.3807 7.70826 12.5 8.82754 12.5 10.2083Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+
+          <p class="font-sans font-medium text-sm">Home</p>
         </div>
 
         <div class="flex py-1.5 px-3 w-full gap-3 items-center">
-          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-          <p class="font-sans font-medium text-sm text-elements-highEm">
-            Changelog
-          </p>
+          <!-- Changelog icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.99984 18.3334C14.6022 18.3334 18.3332 14.6025 18.3332 10.0001C18.3332 5.39771 14.6022 1.66675 9.99984 1.66675C5.39746 1.66675 1.6665 5.39771 1.6665 10.0001C1.6665 14.6025 5.39746 18.3334 9.99984 18.3334ZM10.6248 6.45842C10.6248 6.11324 10.345 5.83342 9.99984 5.83342C9.65466 5.83342 9.37484 6.11324 9.37484 6.45842V10.0001C9.37484 10.1658 9.44069 10.3248 9.5579 10.442L11.8496 12.7337C12.0936 12.9778 12.4894 12.9778 12.7334 12.7337C12.9775 12.4896 12.9775 12.0939 12.7334 11.8498L10.6248 9.7412V6.45842Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <p class="font-sans font-medium text-sm">Changelog</p>
         </div>
 
         <div class="flex py-1.5 px-3 w-full gap-3 items-center">
-          <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-          <p class="font-sans font-medium text-sm text-elements-highEm">
-            Resources
-          </p>
+          <!-- Resource icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.2414 13.5417H16.0418C17.4225 13.5417 18.5418 12.4224 18.5418 11.0417V7.29167C18.5418 5.91095 17.4225 4.79167 16.0418 4.79167H12.3572C11.9152 4.79167 11.4912 4.61607 11.1787 4.30351L10.4883 3.61316C10.1758 3.30059 9.75183 3.125 9.30981 3.125H7.29183C5.91112 3.125 4.79183 4.24429 4.79183 5.625V6.45833M1.4585 14.375V8.95833C1.4585 7.57762 2.57778 6.45833 3.9585 6.45833H5.97647C6.4185 6.45833 6.84242 6.63393 7.15498 6.94649L7.84534 7.63685C8.1579 7.94941 8.58182 8.125 9.02385 8.125H12.7085C14.0892 8.125 15.2085 9.24429 15.2085 10.625V14.375C15.2085 15.7557 14.0892 16.875 12.7085 16.875H3.9585C2.57778 16.875 1.4585 15.7557 1.4585 14.375Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <p class="font-sans font-medium text-sm">Resources</p>
         </div>
       </div>
 
       <!-- //TODO: replace placeholder with loop using <for> -->
-      <!-- Chapters navigation -->
-      <div class="flex flex-col gap-0.5">
-        <!-- Chapter title -->
-        <div class="flex px-3 py-2">
-          <p class="font-sans font-medium text-sm text-elements-highEm">
-            Getting Started
-          </p>
-        </div>
-        <!-- Chapter main navigation -->
+      <for let="topic of Docs.outline">
+        <!-- Chapter navigation -->
         <div class="flex flex-col gap-0.5">
-          <!-- Chapter nav item -->
-          <div class="flex py-1.5 px-3 w-full items-center justify-between">
-            <div class="flex gap-3">
-              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-              <p class="font-sans font-medium text-sm text-elements-highEm">
-                Installation
-              </p>
-            </div>
-            <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
+          <!-- Chapter title -->
+          <div class="flex px-3 py-2">
+            <h3 class="font-sans font-medium text-sm text-elements-highEm">
+              {{topic.title}}
+            </h3>
           </div>
-          <!-- Chapter nav sub item -->
-          <div class="flex py-1.5 px-3 w-full items-center justify-between">
-            <div class="flex gap-3">
-              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-              <p class="font-sans font-medium text-sm text-elements-highEm">
-                Subpage
-              </p>
-            </div>
-          </div>
-          <div class="flex py-1.5 px-3 w-full items-center justify-between">
-            <div class="flex gap-3">
-              <div class="h-5 w-5 rounded-md bg-zinc-400"></div>
-              <p class="font-sans font-medium text-sm text-elements-highEm">
-                Another Subpage
-              </p>
-            </div>
-          </div>
+          <for let="header of topic.headers">
+            {{var active = header.href === page.location.pathname}} {{var
+            hasSubpages = !!header.headers && header.headers.length > 0}}
+            <if cond="hasSubpages">
+              <!-- Chapter main navigation -->
+              <div class="flex flex-col gap-0.5" x-data="{ expanded: false }">
+                <!-- Chapter navigation item -->
+                <button
+                  class="flex py-1.5 px-3 w-full items-center justify-between"
+                  @click="expanded = !expanded"
+                >
+                  <div class="flex gap-3">
+                    <!-- DOT icon -->
+                    <svg
+                      class="text-border-interactive-hover"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+                    </svg>
+                    <p class="font-sans text-sm text-elements-highEm">
+                      {{header.title}}
+                    </p>
+                  </div>
+                  <!-- Chevron Down icon -->
+                  <svg
+                    x-show="expanded"
+                    class="text-elements-highEm"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 4.5L6.00001 8.5L2 4.5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <!-- Chevron Up icon -->
+                  <svg
+                    x-show="!expanded"
+                    class="text-elements-highEm"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 7.5L5.99999 3.5L10 7.5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <for let="headerSubpage of header.headers">
+                  <div
+                    class="flex flex-col gap-0.5"
+                    x-show="expanded"
+                    x-collapse
+                  >
+                    <!-- Chapter nav sub item -->
+                    <a
+                      href="{{headerSubpage.href}}"
+                      class="flex py-1.5 pl-4 pr-3 w-full items-center justify-between text-elements-link"
+                    >
+                      <div class="flex gap-3">
+                        <!-- Corner Down Right icon -->
+                        <div class="h-5 w-5 grid place-content-center">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.75 2.25V4.5C1.75 6.15685 3.09315 7.5 4.75 7.5H10M8.5 5.5L9.96967 6.96967C10.2626 7.26256 10.2626 7.73744 9.96967 8.03033L8.5 9.5"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <p class="font-sans text-sm">{{headerSubpage.title}}</p>
+                      </div>
+                    </a>
+                  </div>
+                </for>
+              </div>
+            </if>
+            <else>
+              <!-- Chapter main navigation -->
+              <div class="flex flex-col gap-0.5">
+                <!-- Chapter navigation item -->
+                <a
+                  href="{{header.href}}"
+                  class="flex py-1.5 px-3 w-full items-center justify-between"
+                >
+                  <div class="flex gap-3">
+                    <!-- DOT icon -->
+                    <svg
+                      class="text-border-interactive-hover"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+                    </svg>
+                    <p class="font-sans text-sm text-elements-highEm">
+                      {{header.title}}
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </else>
+          </for>
         </div>
-      </div>
+      </for>
     </div>
   </div>
 </div>
