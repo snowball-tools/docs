@@ -1,5 +1,5 @@
 import * as LearnEVM from "./lib/learnevm";
-export * as Docs from "./lib/docs";
+import * as Docs from "./lib/docs";
 
 export default {
   name: "Snowballtools Docs – A free, advanced course for Solidity Developers",
