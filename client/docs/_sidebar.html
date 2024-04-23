@@ -32,7 +32,6 @@
         Search
       </div>
 
-      <!-- //TODO: give selected logic -->
       <!-- Main navigation -->
       <div class="flex flex-col gap-1 text-elements-highEm">
         <!-- Nav item -->
@@ -101,15 +100,12 @@
         </div>
       </div>
 
-      <!-- //TODO: replace placeholder with loop using <for> -->
       <for let="topic of Docs.outline">
         <!-- Chapter navigation -->
         <div class="flex flex-col gap-0.5">
           <!-- Chapter title -->
           <div class="flex px-3 py-2">
-            <h3 class="font-sans font-medium text-sm text-elements-highEm">
-              {{topic.title}}
-            </h3>
+            <h3 class="sidebar-title">{{topic.title}}</h3>
           </div>
           <for let="header of topic.headers">
             {{var active = header.href === page.location.pathname}} {{var
@@ -119,13 +115,13 @@
               <div class="flex flex-col gap-0.5" x-data="{ expanded: false }">
                 <!-- Chapter navigation item -->
                 <button
-                  class="flex py-1.5 px-3 w-full items-center justify-between"
+                  class="flex py-1.5 px-3 w-full items-center justify-between sidebar-subs-nav-item"
                   @click="expanded = !expanded"
                 >
                   <div class="flex gap-3">
                     <!-- DOT icon -->
                     <svg
-                      class="text-border-interactive-hover"
+                      class="dot"
                       width="20"
                       height="20"
                       viewBox="0 0 20 20"
@@ -134,14 +130,11 @@
                     >
                       <circle cx="10" cy="10" r="1.5" fill="currentColor" />
                     </svg>
-                    <p class="font-sans text-sm text-elements-highEm">
-                      {{header.title}}
-                    </p>
+                    <p>{{header.title}}</p>
                   </div>
                   <!-- Chevron Down icon -->
                   <svg
-                    x-show="expanded"
-                    class="text-elements-highEm"
+                    x-show="!expanded"
                     width="12"
                     height="12"
                     viewBox="0 0 12 12"
@@ -157,8 +150,7 @@
                   </svg>
                   <!-- Chevron Up icon -->
                   <svg
-                    x-show="!expanded"
-                    class="text-elements-highEm"
+                    x-show="expanded"
                     width="12"
                     height="12"
                     viewBox="0 0 12 12"
@@ -183,12 +175,13 @@
                     <!-- Chapter nav sub item -->
                     <a
                       href="{{headerSubpage.href}}"
-                      class="flex py-1.5 pl-4 pr-3 w-full items-center justify-between text-elements-link"
+                      class="flex py-1.5 pl-4 pr-3 w-full items-center justify-between sidebar-subs-nav-item"
                     >
                       <div class="flex gap-3">
                         <!-- Corner Down Right icon -->
                         <div class="h-5 w-5 grid place-content-center">
                           <svg
+                            class="{{active ? '-active' : header.href ? '-inactive' : '-disabled'}}"
                             width="12"
                             height="12"
                             viewBox="0 0 12 12"
@@ -203,7 +196,11 @@
                             />
                           </svg>
                         </div>
-                        <p class="font-sans text-sm">{{headerSubpage.title}}</p>
+                        <p
+                          class="{{active ? '-active' : header.href ? '-inactive' : '-disabled'}}"
+                        >
+                          {{headerSubpage.title}}
+                        </p>
                       </div>
                     </a>
                   </div>
@@ -216,12 +213,12 @@
                 <!-- Chapter navigation item -->
                 <a
                   href="{{header.href}}"
-                  class="flex py-1.5 px-3 w-full items-center justify-between"
+                  class="flex py-1.5 px-3 w-full items-center justify-between sidebar-nav-item"
                 >
                   <div class="flex gap-3">
                     <!-- DOT icon -->
                     <svg
-                      class="text-border-interactive-hover"
+                      class="{{active ? '-active' : header.href ? '-inactive' : '-disabled'}}"
                       width="20"
                       height="20"
                       viewBox="0 0 20 20"
@@ -230,7 +227,9 @@
                     >
                       <circle cx="10" cy="10" r="1.5" fill="currentColor" />
                     </svg>
-                    <p class="font-sans text-sm text-elements-highEm">
+                    <p
+                      class="{{active ? '-active' : header.href ? '-inactive' : '-disabled'}}"
+                    >
                       {{header.title}}
                     </p>
                   </div>
