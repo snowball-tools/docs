@@ -4,32 +4,39 @@
 
 .sidebar-nav-item {
   @apply text-elements-highEm hover:text-elements-link-hovered;
+
+  p {
+    @apply font-sans text-sm;
+  }
+
+  svg {
+    @apply text-border-interactive-hover hover:text-elements-link-hovered;
+  }
 }
 
-.sidebar-nav-item p {
-  @apply font-sans text-sm;
-}
-
-.sidebar-nav-item svg {
-  @apply text-border-interactive-hover hover:text-elements-link-hovered;
-}
-
-.sidebar-nav-item .-active {
+.sidebar-nav-item.-active {
   @apply text-elements-link;
+
+  svg {
+    @apply text-elements-link;
+  }
 }
 
 .sidebar-subs-nav-item {
   @apply text-elements-highEm hover:text-elements-link-hovered;
+
+  p {
+    @apply font-sans text-sm;
+  }
+
+  svg.dot {
+    @apply text-border-interactive-hover hover:text-elements-link-hovered;
+  }
+
+  .-active {
+  }
 }
 
-.sidebar-subs-nav-item p {
-  @apply font-sans text-sm;
-}
-
-.sidebar-subs-nav-item svg.dot {
-  @apply text-border-interactive-hover hover:text-elements-link-hovered;
-}
-
-.sidebar-nav-item .-active {
+.sidebar-subs-nav-item.-active {
   @apply text-elements-link;
 }
