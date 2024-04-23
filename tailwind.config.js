@@ -282,6 +282,15 @@ module.exports = {
         elements: {
           midEm: "#475969",
           highEm: "#0E2F4E",
+          link: {
+            DEFAULT: "#0F86F5",
+            hovered: "#096DC8",
+          },
+        },
+        border: {
+          interactive: {
+            hover: "#082F5624",
+          },
         },
         canvas: {
           DEFAULT: "#F0F8FE",
