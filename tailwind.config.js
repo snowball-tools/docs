@@ -280,8 +280,10 @@ module.exports = {
           },
         },
         elements: {
+          lowEm: "#60788F",
           midEm: "#475969",
           highEm: "#0E2F4E",
+          disabled: "#94A7B8",
           link: {
             DEFAULT: "#0F86F5",
             hovered: "#096DC8",
