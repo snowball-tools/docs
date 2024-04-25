@@ -2,6 +2,14 @@
   @apply font-sans font-medium text-sm text-elements-highEm;
 }
 
+.sidebar-main-nav-item {
+  @apply text-elements-highEm hover:text-elements-link-hovered cursor-pointer;
+
+  p {
+    @apply font-sans text-sm font-medium;
+  }
+}
+
 .sidebar-nav-item {
   @apply text-elements-highEm hover:text-elements-link-hovered;
 
