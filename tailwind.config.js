@@ -288,6 +288,10 @@ module.exports = {
             DEFAULT: "#0F86F5",
             hovered: "#096DC8",
           },
+          onSecondary: "#0F86F5",
+        },
+        controls: {
+          secondary: "#E2F2FD",
         },
         border: {
           interactive: {
