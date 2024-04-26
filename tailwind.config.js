@@ -296,6 +296,9 @@ module.exports = {
           interactive: {
             hover: "#082F5624",
           },
+          separator: {
+            DEFAULT: "#082F560F",
+          },
         },
         canvas: {
           DEFAULT: "#F0F8FE",
