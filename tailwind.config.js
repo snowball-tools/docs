@@ -275,9 +275,8 @@ module.exports = {
       },
       colors: {
         controls: {
-          primary: {
-            DEFAULT: "#0F86F5",
-          },
+          primary: "#0F86F5",
+          secondary: "#E2F2FD",
         },
         elements: {
           lowEm: "#60788F",
@@ -288,10 +287,10 @@ module.exports = {
             DEFAULT: "#0F86F5",
             hovered: "#096DC8",
           },
+          onPrimary: "#FFFFFF",
           onSecondary: "#0F86F5",
-        },
-        controls: {
-          secondary: "#E2F2FD",
+          tertiary: "#FFFFFF",
+          onTertiary: "#1B2D3E",
         },
         border: {
           interactive: {
