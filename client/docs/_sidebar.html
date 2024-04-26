@@ -1,5 +1,5 @@
 <div
-  class="box-content flex flex-col max-w-[calc(80vw)] md:w-[20rem] h-screen fixed left-0 top-0 z-20 md:sticky md:left-auto bg-canvas shadow-card transition-transform overflow-y-auto md:overflow-show"
+  class="box-content flex flex-col w-full md:max-w-[calc(80vw)] md:w-[20rem] h-screen fixed left-0 top-0 z-20 md:sticky md:left-auto bg-canvas shadow-card transition-transform overflow-y-auto md:overflow-show"
   :class="{ 'translate-x-0': sidebarOpen, '-translate-x-full md:translate-x-0': !sidebarOpen }"
 >
   <!-- Sidebar Content -->
@@ -49,26 +49,49 @@
           </svg>
         </a>
 
-        <!-- Version dropdown -->
-        <div
-          class="bg-white rounded-full shadow-card flex gap-1.5 py-2 px-3 text-elements-disabled"
-        >
-          <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-          <!-- Chevron grabber icon -->
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <div class="flex gap-3 items-center">
+          <!-- Version dropdown -->
+          <div
+            class="bg-white rounded-full shadow-card flex gap-1.5 py-2 px-3 text-elements-disabled"
           >
-            <path
-              d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+            <!-- Chevron grabber icon -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <!-- Mobile close menu button -->
+          <button
+            class="h-8 w-8 grid md:hidden place-content-center rounded-full bg-elements-tertiary text-elements-onTertiary"
+            @click="sidebarOpen = false"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.81344 2.81319C3.0087 2.61793 3.32528 2.61793 3.52055 2.81319L8.00033 7.29297L12.4801 2.81319C12.6754 2.61793 12.9919 2.61793 13.1872 2.81319C13.3825 3.00846 13.3825 3.32504 13.1872 3.5203L8.70743 8.00008L13.1872 12.4799C13.3825 12.6751 13.3825 12.9917 13.1872 13.187C12.9919 13.3822 12.6754 13.3822 12.4801 13.187L8.00033 8.70719L3.52055 13.187C3.32528 13.3822 3.0087 13.3822 2.81344 13.187C2.61818 12.9917 2.61818 12.6751 2.81344 12.4799L7.29322 8.00008L2.81344 3.5203C2.61818 3.32504 2.61818 3.00846 2.81344 2.81319Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -77,7 +100,7 @@
     <div class="flex flex-col gap-8">
       <!-- Searchbar -->
       <div
-        class="rounded-xl bg-white w-full shadow-card h-11 px-4 py-3 items-center flex gap-2 text-elements-lowEm"
+        class="rounded-xl bg-white w-full shadow-card h-11 px-4 py-3 items-center hidden md:flex gap-2 text-elements-lowEm"
       >
         <!-- Magnifying glass icon -->
         <svg
@@ -97,6 +120,29 @@
         </svg>
         <p class="text-elements-disabled text-sm">Search</p>
       </div>
+
+      <!-- Mobile Explore Snowball button -->
+      <!-- //TODO: handle button click -->
+      <button
+        class="rounded-full justify-center bg-controls-primary w-full shadow-card h-11 px-5 items-center flex md:hidden gap-2 text-elements-onPrimary"
+      >
+        <p class="text-sm">Explore Snowball</p>
+        <!-- Round Arrow right icon -->
+        <svg
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17 9C17 4.85786 13.6421 1.5 9.5 1.5C5.35786 1.5 2 4.85786 2 9C2 13.1421 5.35786 16.5 9.5 16.5C13.6421 16.5 17 13.1421 17 9ZM11.3295 9.5625L9.85225 11.0398C9.63258 11.2594 9.63258 11.6156 9.85225 11.8352C10.0719 12.0549 10.4281 12.0549 10.6477 11.8352L12.5549 9.92808C13.0675 9.41551 13.0675 8.58449 12.5549 8.07192L10.6477 6.16475C10.4281 5.94508 10.0719 5.94508 9.85225 6.16475C9.63258 6.38442 9.63258 6.74058 9.85225 6.96025L11.3295 8.4375H6.3125C6.00184 8.4375 5.75 8.68934 5.75 9C5.75 9.31066 6.00184 9.5625 6.3125 9.5625H11.3295Z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
 
       <!-- Main navigation -->
       <div class="flex flex-col gap-1 text-elements-highEm">
