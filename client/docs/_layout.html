@@ -168,68 +168,59 @@ Docs.headerByHref[page.location.pathname]}}
       </div>
     </div>
 
-    <div class="md:pl-4 bg-white rounded-[20px] m-2">
-      <div class="pt-8 pb-16 mx-6 md:mx-8" @click="sidebarOpen = false">
-        <if cond="header">
-          <nav
-            class="mt-4 sm:mt-0 mb-10 sm:mb-14 p-4 md:p-0 flex bg-gray-100 dark:bg-zinc-600 md:bg-transparent"
-            aria-label="Breadcrumb"
+    <div class="bg-white rounded-[20px] m-2 pb-16" @click="sidebarOpen = false">
+      <!-- Breadcrumb -->
+      <nav
+        class="flex justify-between py-4 px-3 md:px-6 md:py-3 border-border-separator border-b"
+        aria-label="Breadcrumb"
+      >
+        <ol role="list" class="flex items-center text-sm text-elements-highEm">
+          <li class="mr-4">
+            <!-- Filled Home icon -->
+            <a href="/" class="gap-1.5 flex items-center">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.75259 1.30805C7.52477 0.863462 8.47523 0.863461 9.24741 1.30805L12.7474 3.3232C13.5224 3.76939 14 4.59553 14 5.48976V11.5001C14 12.8808 12.8807 14.0001 11.5 14.0001H4.5C3.11929 14.0001 2 12.8808 2 11.5001V5.48976C2 4.59553 2.47763 3.76939 3.25259 3.3232L6.75259 1.30805ZM5.83333 8.16679C5.83333 6.97017 6.80338 6.00012 8 6.00012C9.19662 6.00012 10.1667 6.97017 10.1667 8.16679C10.1667 9.36341 9.19662 10.3335 8 10.3335C6.80338 10.3335 5.83333 9.36341 5.83333 8.16679Z"
+                  fill="currentColor"
+                />
+              </svg>
+
+              <p class="text-sm">Home</p>
+            </a>
+          </li>
+        </ol>
+
+        <!-- Explore Snowball button -->
+        <!-- //TODO: handle button click -->
+        <button
+          class="rounded-full justify-center bg-controls-primary shadow-card h-11 px-5 items-center hidden md:flex gap-2 text-elements-onPrimary"
+        >
+          <p class="text-sm">Explore Snowball</p>
+          <!-- Round Arrow right icon -->
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <ol
-              role="list"
-              class="sm:flex items-center text-2xl sm:text-base text-gray-500 dark:text-zinc-200"
-            >
-              <li class="hidden md:block mr-4">
-                <a href="/" class="hover:text-gray-700 dark:hover:text-white">
-                  <span class="mr-2 md:mr-4 relative top-[-1px] text-xs"
-                    >⚙️</span
-                  >
-                  LearnEVM.com
-                </a>
-              </li>
-              <li>
-                <div class="mr-4 flex items-center">
-                  <svg
-                    class="hidden md:block mr-4 h-5 w-5 flex-shrink-0 text-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-                  </svg>
-                  <a
-                    href="{{topic.headers[0].href}}"
-                    class="hover:text-gray-700 dark:hover:text-white"
-                    >{{topic.title}}</a
-                  >
-                </div>
-              </li>
-              <li class="mt-1 sm:mt-0">
-                <div class="flex items-center">
-                  <span class="sm:hidden mr-3 relative top-[0.1em] font-ui"
-                    >└─</span
-                  >
-                  <svg
-                    class="hidden sm:block mr-4 h-5 w-5 flex-shrink-0 text-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-                  </svg>
-                  <a
-                    href="{{header.href}}"
-                    class="hover:text-gray-700 dark:hover:text-white"
-                    >{{header.title}}</a
-                  >
-                </div>
-              </li>
-            </ol>
-          </nav>
-        </if>
-      </div>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17 9C17 4.85786 13.6421 1.5 9.5 1.5C5.35786 1.5 2 4.85786 2 9C2 13.1421 5.35786 16.5 9.5 16.5C13.6421 16.5 17 13.1421 17 9ZM11.3295 9.5625L9.85225 11.0398C9.63258 11.2594 9.63258 11.6156 9.85225 11.8352C10.0719 12.0549 10.4281 12.0549 10.6477 11.8352L12.5549 9.92808C13.0675 9.41551 13.0675 8.58449 12.5549 8.07192L10.6477 6.16475C10.4281 5.94508 10.0719 5.94508 9.85225 6.16475C9.63258 6.38442 9.63258 6.74058 9.85225 6.96025L11.3295 8.4375H6.3125C6.00184 8.4375 5.75 8.68934 5.75 9C5.75 9.31066 6.00184 9.5625 6.3125 9.5625H11.3295Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </nav>
     </div>
   </div>
   <script src="/docs/layout.js"></script>
