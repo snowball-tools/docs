@@ -1,0 +1,356 @@
+<div
+  class="box-content flex flex-col w-full md:max-w-[calc(80vw)] md:w-[20rem] h-screen fixed left-0 top-0 z-20 md:sticky md:left-auto bg-canvas shadow-card transition-transform overflow-y-auto md:overflow-show"
+  :class="{ 'translate-x-0': sidebarOpen, '-translate-x-full md:translate-x-0': !sidebarOpen }"
+>
+  <!-- Sidebar Content -->
+  <div class="p-8 flex gap-8 flex-col md:h-0 flex-1">
+    <!-- Logo and Version -->
+    <div class="flex flex-shrink-0">
+      <div class="flex w-full justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2">
+          <!-- Snowball logo -->
+          <svg
+            width="136"
+            height="36"
+            viewBox="0 0 136 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="10.8" fill="#0F86F5" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.9474 9.0086C16.1927 9.12001 17.9311 10.7083 19.5348 12.2637C21.1589 13.8388 22.87 15.5354 22.991 17.7798C23.1168 20.1126 21.9054 22.3353 20.1631 23.9162C18.4895 25.4347 16.2196 25.9224 13.9474 25.9856C11.5915 26.0511 8.9946 25.9588 7.37121 24.272C5.7702 22.6085 5.97754 20.0733 6.04992 17.7798C6.11913 15.5868 6.29214 13.3197 7.76861 11.6799C9.32149 9.95518 11.613 8.89278 13.9474 9.0086Z"
+              fill="#4AA4F8"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.6476 9.0086C17.8929 9.12001 19.6313 10.7083 21.235 12.2637C22.8591 13.8388 24.5702 15.5354 24.6912 17.7798C24.817 20.1126 23.6056 22.3353 21.8633 23.9162C20.1897 25.4347 17.9198 25.9224 15.6476 25.9856C13.2917 26.0511 10.6948 25.9588 9.0714 24.272C7.4704 22.6085 7.67773 20.0733 7.75011 17.7798C7.81932 15.5868 7.99233 13.3197 9.4688 11.6799C11.0217 9.95518 13.3131 8.89278 15.6476 9.0086Z"
+              fill="#75BAFA"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.1974 9.0086C20.4427 9.12001 22.1811 10.7083 23.7848 12.2637C25.4089 13.8388 27.12 15.5354 27.241 17.7798C27.3668 20.1126 26.1554 22.3353 24.4131 23.9162C22.7395 25.4347 20.4696 25.9224 18.1974 25.9856C15.8415 26.0511 13.2446 25.9588 11.6212 24.272C10.0202 22.6085 10.2275 20.0733 10.2999 17.7798C10.3691 15.5868 10.5421 13.3197 12.0186 11.6799C13.5715 9.95518 15.863 8.89278 18.1974 9.0086Z"
+              fill="#C4E1FD"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20.7472 9.0086C22.9925 9.12001 24.7309 10.7083 26.3346 12.2637C27.9587 13.8388 29.6698 15.5354 29.7908 17.7798C29.9166 20.1126 28.7052 22.3353 26.9629 23.9162C25.2893 25.4347 23.0194 25.9224 20.7472 25.9856C18.3913 26.0511 15.7944 25.9588 14.171 24.272C12.57 22.6085 12.7773 20.0733 12.8497 17.7798C12.9189 15.5868 13.0919 13.3197 14.5684 11.6799C16.1213 9.95518 18.4128 8.89278 20.7472 9.0086Z"
+              fill="white"
+            />
+            <path
+              d="M52.7983 26.2461C49.0146 26.2461 46.7485 24.2876 46.7485 21.0166H49.4043C49.4248 22.8623 50.6963 23.9595 52.8188 23.9595C54.7261 23.9595 55.9873 23.0981 55.9873 21.7549C55.9873 20.6782 55.1875 20.0527 53.147 19.5811L51.5063 19.2119C48.4507 18.5146 47.0459 17.1714 47.0459 15.0283C47.0459 12.3008 49.2915 10.4756 52.665 10.4756C56.0796 10.4756 58.2021 12.3213 58.2944 15.3564H55.7207C55.6079 13.7466 54.439 12.7725 52.6548 12.7725C50.9629 12.7725 49.7632 13.644 49.7632 14.895C49.7632 15.9204 50.5527 16.4946 52.542 16.9561L54.0903 17.3149C57.2588 18.0225 58.6841 19.3452 58.6841 21.5908C58.6841 24.4414 56.418 26.2461 52.7983 26.2461ZM63.165 19.8784V26H60.5811V15.1719H63.124V16.833C63.8623 15.6128 64.9595 14.9565 66.4463 14.9565C68.7124 14.9565 70.312 16.4536 70.312 19.2324V26H67.7178V19.6426C67.7178 18.0532 66.918 17.2227 65.5337 17.2227C64.1802 17.2227 63.165 18.0327 63.165 19.8784ZM77.459 26.2461C74.27 26.2461 72.1167 23.9595 72.1167 20.5962C72.1167 17.2329 74.27 14.9258 77.459 14.9258C80.6479 14.9258 82.8013 17.2329 82.8013 20.5962C82.8013 23.9595 80.6479 26.2461 77.459 26.2461ZM77.459 24.0825C79.1201 24.0825 80.1763 22.7495 80.1763 20.5962C80.1763 18.4326 79.1099 17.0894 77.459 17.0894C75.7979 17.0894 74.7314 18.4224 74.7314 20.5962C74.7314 22.7598 75.7876 24.0825 77.459 24.0825ZM86.6465 26L83.3037 15.1719H86.021L87.1387 19.2837C87.4771 20.5757 87.7847 21.96 88.1128 23.3032C88.4512 21.96 88.7793 20.5757 89.1382 19.2837L90.2866 15.1719H92.6758L93.814 19.2837C94.1626 20.5654 94.4907 21.9395 94.8291 23.2827C95.1367 21.9395 95.4546 20.5654 95.793 19.2837L96.9106 15.1719H99.6587L96.3057 26H93.6191L92.3066 21.4883C92.0195 20.4834 91.7529 19.4272 91.4761 18.3711C91.2095 19.4272 90.9429 20.4834 90.6455 21.4883L89.3125 26H86.6465ZM106.847 26.2153C105.432 26.2153 104.242 25.6001 103.565 24.3491H103.545V26H101.002V10.7217H103.586V16.71H103.606C104.304 15.5205 105.452 14.9565 106.857 14.9565C109.646 14.9565 111.533 17.2432 111.533 20.5757C111.533 23.9492 109.677 26.2153 106.847 26.2153ZM106.242 24.0518C107.841 24.0518 108.918 22.8213 108.918 20.5757C108.918 18.3403 107.841 17.0996 106.242 17.0996C104.55 17.0996 103.442 18.4736 103.442 20.5757C103.442 22.688 104.55 24.0518 106.242 24.0518ZM117.511 26.2153C114.681 26.2153 112.825 23.9492 112.825 20.5757C112.825 17.2432 114.711 14.9565 117.49 14.9565C118.895 14.9565 120.105 15.5308 120.771 16.6792H120.812V15.1719H123.345V26H120.812V24.3696H120.782C120.105 25.6001 118.926 26.2153 117.511 26.2153ZM118.116 24.0518C119.808 24.0518 120.915 22.688 120.915 20.5757C120.915 18.4736 119.808 17.0996 118.116 17.0996C116.516 17.0996 115.439 18.3403 115.439 20.5757C115.439 22.8213 116.516 24.0518 118.116 24.0518ZM128.903 26C126.596 26 125.652 25.2207 125.652 23.2314V10.7217H128.236V22.9751C128.236 23.7339 128.472 23.9595 129.221 23.9595H129.651V26H128.903ZM134.337 26C132.03 26 131.087 25.2207 131.087 23.2314V10.7217H133.671V22.9751C133.671 23.7339 133.907 23.9595 134.655 23.9595H135.086V26H134.337Z"
+              fill="#0A3A5C"
+            />
+          </svg>
+        </a>
+
+        <div class="flex gap-3 items-center">
+          <!-- Version dropdown -->
+          <div
+            class="bg-white rounded-full shadow-card flex gap-1.5 py-2 px-3 text-elements-disabled"
+          >
+            <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+            <!-- Chevron grabber icon -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <!-- Mobile close menu button -->
+          <button
+            class="h-8 w-8 grid md:hidden place-content-center rounded-full bg-elements-tertiary text-elements-onTertiary"
+            @click="sidebarOpen = false"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.81344 2.81319C3.0087 2.61793 3.32528 2.61793 3.52055 2.81319L8.00033 7.29297L12.4801 2.81319C12.6754 2.61793 12.9919 2.61793 13.1872 2.81319C13.3825 3.00846 13.3825 3.32504 13.1872 3.5203L8.70743 8.00008L13.1872 12.4799C13.3825 12.6751 13.3825 12.9917 13.1872 13.187C12.9919 13.3822 12.6754 13.3822 12.4801 13.187L8.00033 8.70719L3.52055 13.187C3.32528 13.3822 3.0087 13.3822 2.81344 13.187C2.61818 12.9917 2.61818 12.6751 2.81344 12.4799L7.29322 8.00008L2.81344 3.5203C2.61818 3.32504 2.61818 3.00846 2.81344 2.81319Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Searchbar and Table of Contents -->
+    <div class="flex flex-col gap-8">
+      <!-- Searchbar -->
+      <div
+        class="rounded-xl bg-white w-full shadow-card h-11 px-4 py-3 items-center hidden md:flex gap-2 text-elements-lowEm"
+      >
+        <!-- Magnifying glass icon -->
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.1875 15.1875L12.0949 12.0949M12.0949 12.0949C13.0789 11.1109 13.6875 9.75152 13.6875 8.25C13.6875 5.24695 11.253 2.8125 8.25 2.8125C5.24695 2.8125 2.8125 5.24695 2.8125 8.25C2.8125 11.253 5.24695 13.6875 8.25 13.6875C9.75152 13.6875 11.1109 13.0789 12.0949 12.0949Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <p class="text-elements-disabled text-sm">Search</p>
+      </div>
+
+      <!-- Mobile Explore Snowball button -->
+      <!-- //TODO: handle button click -->
+      <button
+        class="rounded-full justify-center bg-controls-primary w-full shadow-card h-11 px-5 items-center flex md:hidden gap-2 text-elements-onPrimary"
+      >
+        <p class="text-sm">Explore Snowball</p>
+        <!-- Round Arrow right icon -->
+        <svg
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17 9C17 4.85786 13.6421 1.5 9.5 1.5C5.35786 1.5 2 4.85786 2 9C2 13.1421 5.35786 16.5 9.5 16.5C13.6421 16.5 17 13.1421 17 9ZM11.3295 9.5625L9.85225 11.0398C9.63258 11.2594 9.63258 11.6156 9.85225 11.8352C10.0719 12.0549 10.4281 12.0549 10.6477 11.8352L12.5549 9.92808C13.0675 9.41551 13.0675 8.58449 12.5549 8.07192L10.6477 6.16475C10.4281 5.94508 10.0719 5.94508 9.85225 6.16475C9.63258 6.38442 9.63258 6.74058 9.85225 6.96025L11.3295 8.4375H6.3125C6.00184 8.4375 5.75 8.68934 5.75 9C5.75 9.31066 6.00184 9.5625 6.3125 9.5625H11.3295Z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+
+      <!-- Main navigation -->
+      <div class="flex flex-col gap-1 text-elements-highEm">
+        <!-- Nav item -->
+        <!-- //TODO: replace `sidebar-main-nav-item` with functional <a> -->
+        <div
+          class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item"
+        >
+          <!-- Home filled icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6.75259 1.30805C7.52477 0.863462 8.47523 0.863461 9.24741 1.30805L12.7474 3.3232C13.5224 3.76939 14 4.59553 14 5.48976V11.5001C14 12.8808 12.8807 14.0001 11.5 14.0001H4.5C3.11929 14.0001 2 12.8808 2 11.5001V5.48976C2 4.59553 2.47763 3.76939 3.25259 3.3232L6.75259 1.30805ZM5.83333 8.16679C5.83333 6.97017 6.80338 6.00012 8 6.00012C9.19662 6.00012 10.1667 6.97017 10.1667 8.16679C10.1667 9.36341 9.19662 10.3335 8 10.3335C6.80338 10.3335 5.83333 9.36341 5.83333 8.16679Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <p>Home</p>
+        </div>
+
+        <div
+          class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item"
+        >
+          <!-- Changelog icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.99984 18.3334C14.6022 18.3334 18.3332 14.6025 18.3332 10.0001C18.3332 5.39771 14.6022 1.66675 9.99984 1.66675C5.39746 1.66675 1.6665 5.39771 1.6665 10.0001C1.6665 14.6025 5.39746 18.3334 9.99984 18.3334ZM10.6248 6.45842C10.6248 6.11324 10.345 5.83342 9.99984 5.83342C9.65466 5.83342 9.37484 6.11324 9.37484 6.45842V10.0001C9.37484 10.1658 9.44069 10.3248 9.5579 10.442L11.8496 12.7337C12.0936 12.9778 12.4894 12.9778 12.7334 12.7337C12.9775 12.4896 12.9775 12.0939 12.7334 11.8498L10.6248 9.7412V6.45842Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <p>Changelog</p>
+        </div>
+
+        <div
+          class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item"
+        >
+          <!-- Resource filled icon -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.83317 2C4.45246 2 3.33317 3.11929 3.33317 4.5V4.66667H3.1665C1.78579 4.66667 0.666504 5.78595 0.666504 7.16667V11.5C0.666504 12.8807 1.78579 14 3.1665 14H10.1665C11.5472 14 12.6665 12.8807 12.6665 11.5V11.3333H12.8332C14.2139 11.3333 15.3332 10.214 15.3332 8.83333V5.83333C15.3332 4.45262 14.2139 3.33333 12.8332 3.33333H9.88546C9.66444 3.33333 9.45248 3.24554 9.2962 3.08926L8.74391 2.53697C8.4001 2.19315 7.93378 2 7.44755 2H5.83317ZM12.6665 10.3333H12.8332C13.6616 10.3333 14.3332 9.66176 14.3332 8.83333V5.83333C14.3332 5.00491 13.6616 4.33333 12.8332 4.33333H9.88546C9.39922 4.33333 8.93291 4.14018 8.58909 3.79636L8.03681 3.24408C7.88053 3.0878 7.66857 3 7.44755 3H5.83317C5.00474 3 4.33317 3.67157 4.33317 4.5V4.66667H4.78089C5.26712 4.66667 5.73343 4.85982 6.07725 5.20364L6.62953 5.75592C6.78581 5.9122 6.99777 6 7.21879 6H10.1665C11.5472 6 12.6665 7.11929 12.6665 8.5V10.3333Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <p>Resources</p>
+        </div>
+      </div>
+
+      <for let="topic of Docs.outline">
+        <!-- Chapter navigation -->
+        <div class="flex flex-col gap-0.5">
+          <!-- Chapter title -->
+          <div class="flex px-3 py-2">
+            <h3 class="sidebar-title">{{topic.title}}</h3>
+          </div>
+          <for let="header of topic.headers">
+            {{var active = header.href === page.location.pathname}} {{var
+            hasSubpages = !!header.headers}} {{var hasActiveSubpage =
+            !!header.headers && !!header.headers.find(subpage => subpage.href
+            === page.location.pathname)}}
+            <if cond="hasSubpages">
+              <!-- Chapter main navigation -->
+              <div
+                class="flex flex-col gap-0.5"
+                x-data="{ expanded: {{hasActiveSubpage}} }"
+              >
+                <!-- Chapter navigation item -->
+                <button
+                  class="flex py-1.5 px-3 w-full items-center justify-between sidebar-subs-nav-item"
+                  @click="expanded = !expanded"
+                >
+                  <div class="flex gap-3">
+                    <!-- DOT icon -->
+                    <svg
+                      class="dot"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+                    </svg>
+                    <p>{{header.title}}</p>
+                  </div>
+                  <!-- Chevron Down icon -->
+                  <svg
+                    x-show="!expanded"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 4.5L6.00001 8.5L2 4.5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <!-- Chevron Up icon -->
+                  <svg
+                    x-show="expanded"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 7.5L5.99999 3.5L10 7.5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <for let="headerSubpage of header.headers">
+                  {{var activeSubpage = headerSubpage.href ===
+                  page.location.pathname}}
+                  <div
+                    class="flex flex-col gap-0.5"
+                    x-show="expanded"
+                    x-collapse
+                  >
+                    <!-- Chapter nav sub item -->
+                    <a
+                      href="{{headerSubpage.href}}"
+                      class="flex py-1.5 pl-4 pr-3 w-full items-center justify-between sidebar-subs-nav-item {{activeSubpage ? '-active' : header.href ? '-inactive' : '-disabled'}}"
+                    >
+                      <div class="flex gap-3">
+                        <!-- Corner Down Right icon -->
+                        <div class="h-5 w-5 grid place-content-center">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.75 2.25V4.5C1.75 6.15685 3.09315 7.5 4.75 7.5H10M8.5 5.5L9.96967 6.96967C10.2626 7.26256 10.2626 7.73744 9.96967 8.03033L8.5 9.5"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <p>{{headerSubpage.title}}</p>
+                      </div>
+                    </a>
+                  </div>
+                </for>
+              </div>
+            </if>
+            <else>
+              <!-- Chapter main navigation -->
+              <div class="flex flex-col gap-0.5">
+                <!-- Chapter navigation item -->
+                <a
+                  href="{{header.href}}"
+                  class="flex py-1.5 px-3 w-full items-center justify-between sidebar-nav-item {{active ? '-active' : header.href ? '-inactive' : '-disabled'}}"
+                >
+                  <div class="flex gap-3">
+                    <!-- DOT icon -->
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+                    </svg>
+                    <p>{{header.title}}</p>
+                  </div>
+                </a>
+              </div>
+            </else>
+          </for>
+        </div>
+      </for>
+    </div>
+  </div>
+</div>
