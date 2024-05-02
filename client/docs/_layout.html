@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 {{ var title = `${page.title} - ${site.name}` }}
 <title>{{ title }}</title>
 
@@ -221,6 +221,8 @@ Docs.headerByHref[page.location.pathname]}}
           </svg>
         </button>
       </nav>
+
+      <yield />
     </div>
   </div>
   <script src="/docs/layout.js"></script>
