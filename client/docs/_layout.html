@@ -180,10 +180,13 @@ Docs.headerByHref[page.location.pathname]}}
         >
           <if cond="header">
             <li>
-              <a href="/">{{topic.title}} </a>
+              <a href="/">{{topic.title}}</a>
             </li>
+            <!-- for loop to render subpages' pre-determined breadcrumbs -->
+            {{ var index = 0 }}
             <for let="breadcrumb of header.breadcrumbs">
-              <li class="flex gap-3 items-center last:text-elements-highEm">
+              {{void (index += 1)}}
+              <li class="flex gap-3 items-center">
                 <div
                   class="h-5 text-elements-disabled grid place-content-center"
                 >
@@ -202,7 +205,11 @@ Docs.headerByHref[page.location.pathname]}}
                   </svg>
                 </div>
 
-                <a href="{{header.href}}">{{breadcrumb}}</a>
+                <a
+                  href="{{header.href}}"
+                  :class="{ 'text-elements-highEm': index === header.breadcrumbs.length }"
+                  >{{breadcrumb}}</a
+                >
               </li>
             </for>
           </if>
@@ -255,7 +262,10 @@ Docs.headerByHref[page.location.pathname]}}
         </button>
       </nav>
 
+      <!-- Main content -->
       <yield />
+
+      <!-- //TODO: Table of Contents: Desktop only -->
     </div>
   </div>
   <script src="/docs/layout.js"></script>

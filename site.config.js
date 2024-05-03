@@ -13,7 +13,7 @@ export default {
   },
   templateTypes: {
     markdown(content) {
-      return Docs.renderChapterContent(content);
+      return `<div class="prose">${Docs.renderChapterContent(content)}</div>`;
     },
   },
 };
