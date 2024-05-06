@@ -274,6 +274,11 @@ module.exports = {
         print: { raw: "print" }, // @media print { ... }
       },
       colors: {
+        base: {
+          bg: {
+            emphasized: "#F1F5F9"
+          }
+        },
         controls: {
           primary: "#0F86F5",
           secondary: "#E2F2FD",
@@ -294,6 +299,7 @@ module.exports = {
         },
         border: {
           interactive: {
+            DEFAULT: "#082F561A",
             hover: "#082F5624",
           },
           separator: {
@@ -382,7 +388,8 @@ module.exports = {
 
       boxShadow: {
         card: "0px 2px 4px 0px #082F560A",
-        key: "0px 0.5px 0px 1px #E6EFF9, 0px 1px 4px 1px rgba(230, 239, 249, 0.45);"
+        key: "0px 0.5px 0px 1px #E6EFF9, 0px 1px 4px 1px rgba(230, 239, 249, 0.45);",
+        modal: "0px 11px 16px 0px var(--border-interactive, rgba(8, 47, 86, 0.10)), 0px 0px 12px 0px var(--border-interactive-hovered, rgba(8, 47, 86, 0.14));"
       },
     },
   },
