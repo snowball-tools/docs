@@ -183,33 +183,24 @@ Docs.headerByHref[page.location.pathname]}}
               <a href="/">{{topic.title}}</a>
             </li>
             <!-- for loop to render subpages' pre-determined breadcrumbs -->
-            {{ var index = 0 }}
             <for let="breadcrumb of header.breadcrumbs">
-              {{void (index += 1)}}
-              <li class="flex gap-3 items-center">
-                <div
-                  class="h-5 text-elements-disabled grid place-content-center"
-                >
+              <li class="flex gap-3 items-center last:text-elements-highEm">
+                <div class="h-5 text-elements-disabled grid place-content-center">
                   <svg
                     width="12"
                     height="12"
                     viewBox="0 0 12 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
+                    >
+                      <path
                       d="M4.5 2L8.5 5.99999L4.5 10"
                       stroke="currentColor"
                       stroke-linecap="square"
-                    />
+                      />
                   </svg>
                 </div>
-
-                <a
-                  href="{{header.href}}"
-                  :class="{ 'text-elements-highEm': index === header.breadcrumbs.length }"
-                  >{{breadcrumb}}</a
-                >
+                <a href="{{header.href}}">{{breadcrumb}}</a>
               </li>
             </for>
           </if>
