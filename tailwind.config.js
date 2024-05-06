@@ -382,6 +382,7 @@ module.exports = {
 
       boxShadow: {
         card: "0px 2px 4px 0px #082F560A",
+        key: "0px 0.5px 0px 1px #E6EFF9, 0px 1px 4px 1px rgba(230, 239, 249, 0.45);"
       },
     },
   },
