@@ -26,9 +26,10 @@ Docs.headerByHref[page.location.pathname]}}
 />
 <link rel="stylesheet" type="text/css" href="/styles/global.css" />
 
-<div x-data="{ sidebarOpen: false }" class="flex justify-center min-h-screen">
+<div x-data="{ sidebarOpen: false, modalOpen: false }" class="flex justify-center min-h-screen">
   <!-- <div class="flex-1 bg-canvas"></div> -->
   <include src="docs/_sidebar.html"></include>
+  <include src="docs/_searchModal.html"></include>
 
   <div class="w-full max-w-3xl">
     <!-- Mobile menu -->
@@ -74,7 +75,7 @@ Docs.headerByHref[page.location.pathname]}}
 
       <div class="flex items-center gap-2">
         <!-- //TODO: Mobile Search, change to clickable button -->
-        <div class="w-8 h-8 grid place-content-center text-elements-lowEm">
+        <button @click="modalOpen = !modalOpen" class="w-8 h-8 grid place-content-center text-elements-lowEm">
           <!-- Magnifying glass icon -->
           <svg
             width="18"
@@ -91,7 +92,7 @@ Docs.headerByHref[page.location.pathname]}}
               stroke-linejoin="round"
             />
           </svg>
-        </div>
+        </button>
 
         <!-- Version dropdown -->
         <div
