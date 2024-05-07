@@ -47,12 +47,48 @@
         <!-- //TODO: IF RECENT SEARCH RESULT SHOWS EMPTY -->
         <p class="text-elements-disabled text-sm">No recent searches</p>
 
+        <!-- //TODO: IF SEARCH RESULT IS EMPTY -->
+        <p class="text-elements-disabled text-sm">No results found</p>
+
         <!-- //TODO: IF LOADING -->
         <div class="loader-dots block relative w-7 h-3">
           <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
           <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
           <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
           <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
+        </div>
+      </div>
+
+      <!-- Show results -->
+      <div class="w-full flex flex-col gap-4">
+        <div class="w-full flex flex-col gap-1">
+          <!-- Heading -->
+          <div class="px-4 py-1.5 flex justify-start">
+            <p class="text-elements-lowEm text-xs">Getting Started</p>
+          </div>
+          <!-- Page result -->
+          <div class="px-2 flex flex-col gap-1">
+            <!-- Result component -->
+            <template x-for="i in 3">
+
+              <button class="rounded-lg p-4 gap-2.5 flex flex-col items-start bg-base-bg-alternate hover:bg-base-bg-search-hover text-elements-highEm hover:text-elements-link [&>p]:text-elements-lowEm [&>p]:hover:text-elements-onSecondary-tinted">
+                <div class="flex gap-1 justify-center items-center">
+                  <!-- Document icon -->
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                    d="M4.95833 3.79159H9.04167M4.95833 6.12492H9.04167M4.95833 8.45825H6.70833M4.375 12.5416H9.625C10.5915 12.5416 11.375 11.7581 11.375 10.7916V3.20825C11.375 2.24175 10.5915 1.45825 9.625 1.45825H4.375C3.4085 1.45825 2.625 2.24175 2.625 3.20825V10.7916C2.625 11.7581 3.4085 12.5416 4.375 12.5416Z" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p class="font-medium text-xs">Page name</p>
+                </div>
+                <p class="text-xs">Excerpt where the result lies with query visible unless truncation is required. Truncate if it’s too long</p>
+              </button>
+            </template>
+
+          </div>
         </div>
       </div>
     </div>

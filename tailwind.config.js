@@ -276,7 +276,9 @@ module.exports = {
       colors: {
         base: {
           bg: {
-            emphasized: "#F1F5F9"
+            alternate: "#F8FAFC",
+            emphasized: "#F1F5F9",
+            "search-hover": "#0F86F524"
           }
         },
         controls: {
@@ -293,7 +295,10 @@ module.exports = {
             hovered: "#096DC8",
           },
           onPrimary: "#FFFFFF",
-          onSecondary: "#0F86F5",
+          onSecondary: {
+            DEFAULT: "#0F86F5",
+            tinted: "#075185"
+          },
           tertiary: "#FFFFFF",
           onTertiary: "#1B2D3E",
         },
