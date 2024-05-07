@@ -170,8 +170,9 @@ Docs.headerByHref[page.location.pathname]}}
 
     <div class="bg-white rounded-[20px] m-2 pb-16" @click="sidebarOpen = false">
       <!-- Breadcrumb -->
+      {{var mainPaddingX = 'px-3 md:px-6'}}
       <nav
-        class="flex justify-between py-4 px-3 md:px-6 md:py-3 border-border-separator border-b"
+        class="flex justify-between {{mainPaddingX}} py-4 md:py-3 border-border-separator border-b"
         aria-label="Breadcrumb"
       >
         <ol role="list" class="flex items-center text-sm text-elements-highEm">
@@ -222,7 +223,9 @@ Docs.headerByHref[page.location.pathname]}}
         </button>
       </nav>
 
-      <yield />
+      <div class="flex flex-col items-center {{mainPaddingX}} py-4 md:py-8 lg:py-12">
+        <yield />
+      </div>
     </div>
   </div>
   <script src="/docs/layout.js"></script>

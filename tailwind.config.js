@@ -250,7 +250,7 @@ function expandJsExtensions(path) {
 
 module.exports = {
   mode: "jit",
-  darkMode: "media",
+  darkMode: "class",
   purge: [
     "./client/**/*.html",
     ...expandJsExtensions("./client/_lib/**/*"),
