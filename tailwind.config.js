@@ -393,6 +393,7 @@ module.exports = {
 
       boxShadow: {
         card: "0px 2px 4px 0px #082F560A",
+        dropdown: "0px 2px 2px 0px rgba(0, 99, 199, 0.04), 0px 0px 8px 0px rgba(5, 46, 86, 0.04)",
         key: "0px 0.5px 0px 1px #E6EFF9, 0px 1px 4px 1px rgba(230, 239, 249, 0.45);",
         modal: "0px 11px 16px 0px var(--border-interactive, rgba(8, 47, 86, 0.10)), 0px 0px 12px 0px var(--border-interactive-hovered, rgba(8, 47, 86, 0.14));"
       },
