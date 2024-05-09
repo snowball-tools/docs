@@ -25,10 +25,12 @@ Docs.headerByHref[page.location.pathname]}}
   rel="stylesheet"
 />
 <link rel="stylesheet" type="text/css" href="/styles/global.css" />
+<link rel="stylesheet" type="text/css" href="/styles/animation.css" />
 
-<div x-data="{ sidebarOpen: false }" class="flex justify-center min-h-screen">
+<div x-data="{ sidebarOpen: false, modalOpen: false }" class="flex justify-center min-h-screen">
   <!-- <div class="flex-1 bg-canvas"></div> -->
   <include src="docs/_sidebar.html"></include>
+  <include src="docs/_searchModal.html"></include>
 
   <div class="w-full max-w-3xl">
     <!-- Mobile menu -->
@@ -74,7 +76,7 @@ Docs.headerByHref[page.location.pathname]}}
 
       <div class="flex items-center gap-2">
         <!-- //TODO: Mobile Search, change to clickable button -->
-        <div class="w-8 h-8 grid place-content-center text-elements-lowEm">
+        <button @click="modalOpen = !modalOpen" class="w-8 h-8 grid place-content-center text-elements-lowEm">
           <!-- Magnifying glass icon -->
           <svg
             width="18"
@@ -91,29 +93,38 @@ Docs.headerByHref[page.location.pathname]}}
               stroke-linejoin="round"
             />
           </svg>
-        </div>
+        </button>
 
-        <!-- Version dropdown -->
-        <div
-          class="bg-white rounded-full shadow-card flex gap-1.5 py-2 px-3 text-elements-disabled"
-        >
-          <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-          <!-- Chevron grabber icon -->
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+          <!-- Version dropdown -->
+          <div x-data="{ menuOpen: false }" class="relative">
+            <button
+              class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
+              @click="menuOpen = !menuOpen"
+            >
+              <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+              <!-- Chevron grabber icon -->
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <path
+                d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  />
+              </svg>
+            </button>
+            <div x-cloak x-show="menuOpen" @click.away="menuOpen = false" class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2">
+              <!-- //TODO: Add proper href link -->
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.21</a> 
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.20</a> 
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.19</a> 
+            </div>
+          </div>
 
         <!-- Menu button -->
         <button
@@ -175,28 +186,59 @@ Docs.headerByHref[page.location.pathname]}}
         class="flex justify-between {{mainPaddingX}} py-4 md:py-3 border-border-separator border-b"
         aria-label="Breadcrumb"
       >
-        <ol role="list" class="flex items-center text-sm text-elements-highEm">
-          <li class="mr-4">
-            <!-- Filled Home icon -->
-            <a href="/" class="gap-1.5 flex items-center">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M6.75259 1.30805C7.52477 0.863462 8.47523 0.863461 9.24741 1.30805L12.7474 3.3232C13.5224 3.76939 14 4.59553 14 5.48976V11.5001C14 12.8808 12.8807 14.0001 11.5 14.0001H4.5C3.11929 14.0001 2 12.8808 2 11.5001V5.48976C2 4.59553 2.47763 3.76939 3.25259 3.3232L6.75259 1.30805ZM5.83333 8.16679C5.83333 6.97017 6.80338 6.00012 8 6.00012C9.19662 6.00012 10.1667 6.97017 10.1667 8.16679C10.1667 9.36341 9.19662 10.3335 8 10.3335C6.80338 10.3335 5.83333 9.36341 5.83333 8.16679Z"
-                  fill="currentColor"
-                />
-              </svg>
+        <ol
+          role="list"
+          class="flex gap-3 items-center text-sm text-elements-lowEm"
+        >
+          <if cond="header">
+            <li>
+              <a href="/">{{topic.title}}</a>
+            </li>
+            <!-- for loop to render subpages' pre-determined breadcrumbs -->
+            <for let="breadcrumb of header.breadcrumbs">
+              <li class="flex gap-3 items-center last:text-elements-highEm">
+                <div class="h-5 text-elements-disabled grid place-content-center">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                      d="M4.5 2L8.5 5.99999L4.5 10"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      />
+                  </svg>
+                </div>
+                <a href="{{header.href}}">{{breadcrumb}}</a>
+              </li>
+            </for>
+          </if>
+          <else>
+            <li class="mr-4">
+              <!-- Filled Home icon -->
+              <a href="/" class="gap-1.5 flex items-center">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.75259 1.30805C7.52477 0.863462 8.47523 0.863461 9.24741 1.30805L12.7474 3.3232C13.5224 3.76939 14 4.59553 14 5.48976V11.5001C14 12.8808 12.8807 14.0001 11.5 14.0001H4.5C3.11929 14.0001 2 12.8808 2 11.5001V5.48976C2 4.59553 2.47763 3.76939 3.25259 3.3232L6.75259 1.30805ZM5.83333 8.16679C5.83333 6.97017 6.80338 6.00012 8 6.00012C9.19662 6.00012 10.1667 6.97017 10.1667 8.16679C10.1667 9.36341 9.19662 10.3335 8 10.3335C6.80338 10.3335 5.83333 9.36341 5.83333 8.16679Z"
+                    fill="currentColor"
+                  />
+                </svg>
 
-              <p class="text-sm">Home</p>
-            </a>
-          </li>
+                <p class="text-sm">Home</p>
+              </a>
+            </li></else
+          >
         </ol>
 
         <!-- Explore Snowball button -->

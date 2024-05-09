@@ -1,12 +1,14 @@
 /* Extensions to tailwind's typography plugin */
 
 .prose {
-  max-width: 70ch;
+  max-width: 100vw;
+
+  @apply p-5 md:p-10 w-full
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
  /* WARNING: Text colors must be in sync with the .HeadingAnchor class */
-  @apply antialiased dark:text-white;
+  @apply antialiased text-elements-highEm;
 }
 
 .prose h1 {
@@ -18,7 +20,7 @@
 .prose ol > li,
 .prose details summary
 {
-  @apply text-gray-800 dark:text-zinc-100;
+  @apply text-elements-midEm;
 }
 
 .prose a {
@@ -38,7 +40,7 @@
 }
 
 .prose strong {
-  @apply dark:text-white;
+  @apply text-elements-highEm;
 }
 
 .prose blockquote {

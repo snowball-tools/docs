@@ -51,25 +51,34 @@
 
         <div class="flex gap-3 items-center">
           <!-- Version dropdown -->
-          <div
-            class="bg-white rounded-full shadow-card flex gap-1.5 py-2 px-3 text-elements-disabled"
-          >
-            <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-            <!-- Chevron grabber icon -->
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div x-data="{ menuOpen: false }" class="relative">
+            <button
+              class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
+              @click="menuOpen = !menuOpen"
             >
-              <path
+              <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+              <!-- Chevron grabber icon -->
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <path
                 d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  />
+              </svg>
+            </button>
+            <div x-cloak x-show="menuOpen" @click.away="menuOpen = false" class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2">
+              <!-- //TODO: Add proper href link -->
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.21</a> 
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.20</a> 
+              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.19</a> 
+            </div>
           </div>
 
           <!-- Mobile close menu button -->
@@ -99,27 +108,33 @@
     <!-- Searchbar and Table of Contents -->
     <div class="flex flex-col gap-8">
       <!-- Searchbar -->
-      <div
-        class="rounded-xl bg-white w-full shadow-card h-11 px-4 py-3 items-center hidden md:flex gap-2 text-elements-lowEm"
+      <button
+        class="rounded-xl bg-white w-full hover:translate-y-0.5 hover:shadow-none shadow-card h-11 px-4 py-3 items-center justify-between hidden md:flex text-elements-lowEm"
+        @click="modalOpen = !modalOpen"
       >
-        <!-- Magnifying glass icon -->
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M15.1875 15.1875L12.0949 12.0949M12.0949 12.0949C13.0789 11.1109 13.6875 9.75152 13.6875 8.25C13.6875 5.24695 11.253 2.8125 8.25 2.8125C5.24695 2.8125 2.8125 5.24695 2.8125 8.25C2.8125 11.253 5.24695 13.6875 8.25 13.6875C9.75152 13.6875 11.1109 13.0789 12.0949 12.0949Z"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <p class="text-elements-disabled text-sm">Search</p>
-      </div>
+        <div class="flex gap-2 items-center">
+          <!-- Magnifying glass icon -->
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+            <path
+              d="M15.1875 15.1875L12.0949 12.0949M12.0949 12.0949C13.0789 11.1109 13.6875 9.75152 13.6875 8.25C13.6875 5.24695 11.253 2.8125 8.25 2.8125C5.24695 2.8125 2.8125 5.24695 2.8125 8.25C2.8125 11.253 5.24695 13.6875 8.25 13.6875C9.75152 13.6875 11.1109 13.0789 12.0949 12.0949Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              />
+          </svg>
+          <p class="text-elements-disabled text-sm">Search</p>
+        </div>
+        <div class="border-t border-t-[#FFF] flex px-1.5 py-0.5 rounded-md shadow-key bg-[#F5FAFE]">
+          <p class="text-elements-highEm text-xs">⌘ K</p>
+        </div>
+      </button>
 
       <!-- Mobile Explore Snowball button -->
       <!-- //TODO: handle button click -->

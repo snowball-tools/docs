@@ -1,0 +1,96 @@
+<div 
+  role="dialog" 
+  aria-modal="true" 
+  x-show="modalOpen" 
+  class="fixed inset-0 z-50 overflow-y-auto"
+>
+  <div class="flex justify-center min-h-screen px-2 text-center items-start md:items-center pt-20 md:pt-0">
+
+    <div x-cloak @click="modalOpen = false" x-show="modalOpen" 
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="opacity-0" 
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200 transform"
+      x-transition:leave-start="opacity-100" 
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 transition-opacity bg-black bg-opacity-80" aria-hidden="true"
+    ></div>
+
+    <div x-cloak x-show="modalOpen" 
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+      x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+      x-transition:leave="transition ease-in duration-200 transform"
+      x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
+      x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+      class="transform transition-all overflow-hidden inline-block bg-white p-1 rounded-2xl max-w-2xl w-full shadow-modal"
+    >
+      <!-- Searchbar -->
+      <div class="bg-base-bg-emphasized rounded-xl px-4 h-11 flex gap-2 items-center">
+        <!-- left addon -->
+        <div class="h-5 w-5 grid place-content-center">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.375 15.375L12.225 12.225M13.875 8.25C13.875 11.3566 11.3566 13.875 8.25 13.875C5.1434 13.875 2.625 11.3566 2.625 8.25C2.625 5.1434 5.1434 2.625 8.25 2.625C11.3566 2.625 13.875 5.1434 13.875 8.25Z" stroke="#60788F" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+          
+        <!-- input query -->
+        <input 
+          class="text-elements-highEm text-sm bg-transparent w-full focus-visible:outline-none" 
+          placeholder="Search"
+        ></input>
+
+      </div>
+
+      <!-- Loading state and No recent search state -->
+      <div class="h-12 w-full flex items-center justify-center">
+        <!-- //TODO: IF RECENT SEARCH RESULT SHOWS EMPTY -->
+        <p class="text-elements-disabled text-sm">No recent searches</p>
+
+        <!-- //TODO: IF SEARCH RESULT IS EMPTY -->
+        <p class="text-elements-disabled text-sm">No results found</p>
+
+        <!-- //TODO: IF LOADING -->
+        <div class="loader-dots block relative w-7 h-3">
+          <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
+          <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
+          <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
+          <div class="absolute top-0 rounded-full bg-border-interactive w-1 h-1"></div>
+        </div>
+      </div>
+
+      <!-- Show results -->
+      <div class="w-full flex flex-col gap-4">
+        <div class="w-full flex flex-col gap-1">
+          <!-- Heading -->
+          <div class="px-4 py-1.5 flex justify-start">
+            <p class="text-elements-lowEm text-xs">Getting Started</p>
+          </div>
+          <!-- Page result -->
+          <div class="px-2 flex flex-col gap-1">
+            <!-- Result component -->
+            <template x-for="i in 3">
+
+              <button class="rounded-lg p-4 gap-2.5 flex flex-col items-start bg-base-bg-alternate hover:bg-base-bg-search-hover text-elements-highEm hover:text-elements-link [&>p]:text-elements-lowEm [&>p]:hover:text-elements-onSecondary-tinted">
+                <div class="flex gap-1 justify-center items-center">
+                  <!-- Document icon -->
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                    d="M4.95833 3.79159H9.04167M4.95833 6.12492H9.04167M4.95833 8.45825H6.70833M4.375 12.5416H9.625C10.5915 12.5416 11.375 11.7581 11.375 10.7916V3.20825C11.375 2.24175 10.5915 1.45825 9.625 1.45825H4.375C3.4085 1.45825 2.625 2.24175 2.625 3.20825V10.7916C2.625 11.7581 3.4085 12.5416 4.375 12.5416Z" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p class="font-medium text-xs">Page name</p>
+                </div>
+                <p class="text-xs">Excerpt where the result lies with query visible unless truncation is required. Truncate if it’s too long</p>
+              </button>
+            </template>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
