@@ -1,27 +1,26 @@
 @font-face {
   /* Regular */
-  font-family: "Informative";
+  font-family: "StudioFeixen";
   font-weight: 400;
-  src: url("https://0xmacro.com/library/fonts/Informative-Regular.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Regular.woff") format("woff");
-}
-@font-face {
-  /* Italic */
-  font-family: "Informative";
-  font-weight: 400;
-  font-style: italic;
-  src: url("https://0xmacro.com/library/fonts/Informative-Italic.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Italic.woff") format("woff");
+  src: url('../../fonts/StudioFeixen/StudioFeixenSans-Regular.otf') format('opentype');
 }
 @font-face {
   /* Medium */
-  font-family: "Informative";
+  font-family: "StudioFeixen";
   font-weight: 500;
-  src: url("https://0xmacro.com/library/fonts/Informative-Medium.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Medium.woff") format("woff");
+  src: url('../../fonts/StudioFeixen/StudioFeixenSans-Medium.otf') format('opentype');
 }
 @font-face {
   /* Bold */
-  font-family: "Informative";
+  font-family: "StudioFeixen";
   font-weight: 700;
-  src: url("https://0xmacro.com/library/fonts/Informative-Semibold.woff2") format("woff2"),url("https://0xmacro.com/library/fonts/Informative-Semibold.woff") format("woff");
+  src: url('../../fonts/StudioFeixen/StudioFeixenSans-Bold.otf') format('opentype');
+}
+@font-face {
+  /* Black */
+  font-family: "StudioFeixen";
+  font-weight: 800;
+  src: url('../../fonts/StudioFeixen/StudioFeixenSans-Black.otf') format('opentype');
 }
 
 body {
