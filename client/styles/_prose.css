@@ -8,7 +8,7 @@
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
  /* WARNING: Text colors must be in sync with the .HeadingAnchor class */
-  @apply antialiased text-elements-highEm;
+  @apply font-heading mb-2 antialiased text-elements-highEm;
 }
 
 .prose h1 {
@@ -20,7 +20,7 @@
 .prose ol > li,
 .prose details summary
 {
-  @apply text-elements-midEm;
+  @apply font-paragraph text-elements-midEm my-1;
 }
 
 .prose a {
