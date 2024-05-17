@@ -51,8 +51,41 @@
 }
 
 .prose aside {
-  @apply p-4 rounded-sm text-base bg-blue-900 border border-none text-blue-300;
+  @apply my-9 p-4 rounded-xl text-sm border;
+
+  &.info {
+    @apply bg-base-bg-emphasized-info border-border-info-light text-elements-onEmphasized-info;
+
+    svg {
+      @apply text-elements-info
+    }
+  }
+
+  &.danger {
+    @apply bg-base-bg-emphasized-danger border-border-danger-light text-elements-onEmphasized-danger;
+
+    svg {
+      @apply text-elements-danger
+    }
+  }
+
+  &.warning {
+    @apply bg-base-bg-emphasized-warning border-border-warning-light text-elements-onEmphasized-warning;
+
+    svg {
+      @apply text-elements-warning
+    }
+  }
+
+  &.neutral {
+    @apply bg-base-bg-emphasized border-border-separator text-elements-highEm;
+
+    svg {
+      @apply text-elements-onEmphasized-info
+    }
+  }
 }
+
 .prose aside .AsideContent {
   @apply flex;
 }
