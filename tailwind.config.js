@@ -277,7 +277,12 @@ module.exports = {
         base: {
           bg: {
             alternate: "#F8FAFC",
-            emphasized: "#F1F5F9",
+            emphasized: {
+              DEFAULT: "#F1F5F9",
+              info: "#F0F8FE",
+              danger: "#FFF1F2",
+              warning: "#FFF7ED",
+            },
             "search-hover": "#0F86F524"
           }
         },
@@ -299,6 +304,14 @@ module.exports = {
             DEFAULT: "#0F86F5",
             tinted: "#075185"
           },
+          info: "#0F86F5",
+          warning: "#EA580C",
+          danger: "#E11D48",
+          onEmphasized: {
+            info: "#0A3A5C",
+            danger: "#9F1239",
+            warning: "#9A3412",
+          },
           tertiary: "#FFFFFF",
           onTertiary: "#1B2D3E",
         },
@@ -306,6 +319,15 @@ module.exports = {
           interactive: {
             DEFAULT: "#082F561A",
             hover: "#082F5624",
+          },
+          info: {
+            light: "#E2F2FD",
+          },
+          danger: {
+            light: "#FFE4E6",
+          },
+          warning: {
+            light: "#FFEDD5",
           },
           separator: {
             DEFAULT: "#082F560F",
