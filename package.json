@@ -7,7 +7,8 @@
     "test": "ospec",
     "build": "lancer build",
     "init": "lancer init",
-    "dev": "lancer dev"
+    "dev": "lancer dev",
+    "format": "prettier -W ."
   },
   "engines": {
     "node": ">=16 <18"
@@ -26,5 +27,9 @@
     "markdown-it": "^14.1.0",
     "ospec": "^4.1.6",
     "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "prettier": "^3.2.5"
   }
 }
