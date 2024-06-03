@@ -8,7 +8,7 @@
     "build": "lancer build",
     "init": "lancer init",
     "dev": "lancer dev",
-    "format": "prettier -W ."
+    "format": "prettier -w ."
   },
   "engines": {
     "node": ">=16 <18"
