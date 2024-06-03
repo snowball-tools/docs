@@ -164,9 +164,24 @@
       <!-- Main navigation -->
       <div class="flex flex-col gap-1 text-elements-highEm">
         <!-- Nav item -->
-        <template type="nav-item" text="Home" href="/"></template>
-        <template type="nav-item" text="Changelog"></template>
-        <template type="nav-item" text="Resources"></template>
+        <a href="/">
+          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+            <img src="/library/home.svg" alt="Home Icon" />
+            <p>Home</p>
+          </div>
+        </a>
+        <a href="/changelog">
+          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+            <img src="/library/changelog.svg" alt="Changelog Icon" />
+            <p>Changelog</p>
+          </div>
+        </a>
+        <a href="/resources">
+          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+            <img src="/library/resources.svg" alt="Resources Icon" />
+            <p>Resources</p>
+          </div>
+        </a>
       </div>
 
       <for let="topic of Docs.outline">

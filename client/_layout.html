@@ -232,7 +232,12 @@ Docs.headerByHref[page.location.pathname]}}
                 <ul class="flex flex-col gap-1 pl-4 text-sm font-normal text-sky-950">
               <for let="tableOfContentObject of header.tableOfContents">
    
-              <template type="table-of-content-item" level="{{tableOfContentObject.level}}" title="{{tableOfContentObject.title}}" href="{{tableOfContentObject.href}}" />
+                <li class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}">
+                  <div class="justify-start items-baseline gap-2 inline-flex">
+                    <div class="tableOfContentItem-eclipse">•</div>
+                    <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
+                  </div>
+                </li>
   
                 </for>
               </ul>
