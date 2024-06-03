@@ -40,3 +40,30 @@ body {
 .no-y-content-margin > :last-child {
   margin-bottom: 0;
 }
+
+.tableOfContentItem {
+  @apply text-sm font-medium leading-tight text-sky-950;
+}
+
+.tableOfContentItem-level-1 {
+}
+
+.tableOfContentItem-level-2 {
+  @apply pl-2;
+}
+
+.tableOfContentItem-level-3 {
+  @apply pl-3;
+}
+
+.tableOfContentItem-level-4 {
+  @apply pl-4;
+}
+
+.tableOfContentItem-level-5 {
+  @apply pl-5;
+}
+
+.tableOfContentItem-eclipse {
+  @apply text-sky-950 opacity-10;
+}

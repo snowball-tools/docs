@@ -265,10 +265,34 @@ Docs.headerByHref[page.location.pathname]}}
         </button>
       </nav>
 
-      <div class="flex flex-col items-center {{mainPaddingX}} py-4 md:py-8 lg:py-12">
-        <yield />
+        <div class="flex flex-col items-center {{mainPaddingX}} py-4 md:py-8 lg:py-12">
+          <div class="flex">
+
+          <yield />
+          <div class="py-14">
+          <div class="flex flex-col border-l border-sky-950/opacity-5 gap-0.5">
+            <if cond="header && header.tableOfContents">
+              <ul class="flex flex-col gap-4 px-4 text-sm font-normal text-sky-950">
+            <for let="tableOfContentObject of header.tableOfContents">
+ 
+              <li class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}">
+                <div class="justify-start items-baseline gap-2 inline-flex">
+                  <div class="tableOfContentItem-eclipse">•</div>
+                  <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
+                </div>
+              </li>
+
+              </for>
+            </ul>
+            </if>
+
+          </if>
+        </div>
       </div>
-    </div>
+        </div>
+      
+  
+      </div>  
   </div>
   <script src="/docs/layout.js"></script>
 </div>
