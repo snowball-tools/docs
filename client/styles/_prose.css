@@ -27,9 +27,6 @@
   @apply text-elements-midEm;
 }
 
-.prose a {
-  @apply dark:text-blue-500;
-}
 .prose span.HeadingAnchorWrap {
   display: inline-block;
   position: absolute;
@@ -49,11 +46,8 @@
   @apply text-elements-highEm;
 }
 
-.prose blockquote {
-  @apply dark:border-zinc-700;
-}
 .prose blockquote > p {
-  @apply text-xl text-gray-600 dark:text-zinc-300;
+  @apply text-xl text-gray-600;
 }
 
 .prose aside {
@@ -68,49 +62,6 @@
 }
 .prose aside .AsideContent > div {
   @apply flex-1 ml-2 md:ml-3;
-}
-
-.prose aside.-instructor-notes > div:first-child {
-  cursor: pointer;
-}
-.prose aside.-instructor-notes .AsideContent {
-  @apply mt-6;
-}
-.prose aside.-instructor-notes .AsideContent > div > *:first-child {
-  margin-top: 0;
-}
-
-.prose tbody tr {
-  @apply dark:border-zinc-600;
-}
-.prose tbody td {
-  @apply leading-snug p-3 dark:text-zinc-100;
-}
-
-.prose code {
-  padding: 0.15em 0.35em;
-  margin: 0;
-  font-size: 85%;
-  border-radius: 6px;
-  letter-spacing: 0;
-  @apply font-normal dark:text-zinc-100 bg-gray-200/75 dark:bg-zinc-700;
-}
-.prose a code {
-  @apply dark:text-blue-500;
-}
-.prose pre {
-  @apply dark:bg-zinc-700;
-}
-
-.prose code::before,
-.prose code::after {
-  content: '';
-}
-
-.prose .wrap-code-block + pre {
-  white-space: pre-wrap;
-  overflow: auto;
-  word-wrap: break-word;
 }
 
 .prose aside {
