@@ -252,6 +252,7 @@ module.exports = {
   mode: "jit",
   darkMode: "class",
   purge: [
+    "./site.config.js",
     "./client/**/*.html",
     ...expandJsExtensions("./client/_lib/**/*"),
     ...expandJsExtensions("./client/learn_evm/**/*"),
