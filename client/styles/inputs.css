@@ -11,8 +11,8 @@
 }
 
 textarea.input,
-input[type="text"].input,
-input[type="email"].input {
+input[type='text'].input,
+input[type='email'].input {
   outline: none;
   @apply p-2 border border-transparent font-mono focus:border-gray-800;
   @apply dark:bg-cool-gray-600 dark:text-gray-100;

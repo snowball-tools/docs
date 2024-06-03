@@ -6,19 +6,13 @@
 Docs.headerByHref[page.location.pathname]}}
 
 <meta charset="UTF-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 <meta lancer />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/styles/global.css" />
 <link rel="stylesheet" type="text/css" href="/styles/animation.css" />
 
@@ -30,11 +24,14 @@ Docs.headerByHref[page.location.pathname]}}
   <div class="w-full max-w-3xl">
     <!-- Mobile menu -->
     <div class="flex justify-between items-center md:hidden px-5 py-5">
-        <img src="/img/snowball-logo.svg" alt="Snowball Logo"/>
+      <img src="/img/snowball-logo.svg" alt="Snowball Logo" />
 
       <div class="flex items-center gap-2">
         <!-- //TODO: Mobile Search, change to clickable button -->
-        <button @click="modalOpen = !modalOpen" class="w-8 h-8 grid place-content-center text-elements-lowEm">
+        <button
+          @click="modalOpen = !modalOpen"
+          class="w-8 h-8 grid place-content-center text-elements-lowEm"
+        >
           <!-- Magnifying glass icon -->
           <svg
             width="18"
@@ -53,86 +50,106 @@ Docs.headerByHref[page.location.pathname]}}
           </svg>
         </button>
 
-          <!-- Version dropdown -->
-          <div x-data="{ menuOpen: false }" class="relative">
-            <button
-              class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
-              @click="menuOpen = !menuOpen"
+        <!-- Version dropdown -->
+        <div x-data="{ menuOpen: false }" class="relative">
+          <button
+            class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
+            @click="menuOpen = !menuOpen"
+          >
+            <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+            <!-- Chevron grabber icon -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-              <!-- Chevron grabber icon -->
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path
+              <path
                 d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  />
-              </svg>
-            </button>
-            <div x-cloak x-show="menuOpen" @click.away="menuOpen = false" class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2">
-              <!-- //TODO: Add proper href link -->
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.21</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.20</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.19</a> 
-            </div>
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div
+            x-cloak
+            x-show="menuOpen"
+            @click.away="menuOpen = false"
+            class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2"
+          >
+            <!-- //TODO: Add proper href link -->
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.21
+            </a>
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.20
+            </a>
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.19
+            </a>
           </div>
+        </div>
 
         <!-- Menu button -->
         <button
           class="h-11 w-11 grid place-content-center rounded-full bg-controls-secondary text-elements-onSecondary"
           @click="sidebarOpen = true"
         >
-        <svg
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.5625 2.25C2.83763 2.25 2.25 2.83763 2.25 3.5625C2.25 4.28737 2.83763 4.875 3.5625 4.875C4.28737 4.875 4.875 4.28737 4.875 3.5625C4.875 2.83763 4.28737 2.25 3.5625 2.25Z"
-          fill="currentColor"
-        />
-        <path
-          d="M9 2.25C8.27513 2.25 7.6875 2.83763 7.6875 3.5625C7.6875 4.28737 8.27513 4.875 9 4.875C9.72487 4.875 10.3125 4.28737 10.3125 3.5625C10.3125 2.83763 9.72487 2.25 9 2.25Z"
-          fill="currentColor"
-        />
-        <path
-          d="M14.4375 2.25C13.7126 2.25 13.125 2.83763 13.125 3.5625C13.125 4.28737 13.7126 4.875 14.4375 4.875C15.1624 4.875 15.75 4.28737 15.75 3.5625C15.75 2.83763 15.1624 2.25 14.4375 2.25Z"
-          fill="currentColor"
-        />
-        <path
-          d="M3.5625 7.6875C2.83763 7.6875 2.25 8.27513 2.25 9C2.25 9.72487 2.83763 10.3125 3.5625 10.3125C4.28737 10.3125 4.875 9.72487 4.875 9C4.875 8.27513 4.28737 7.6875 3.5625 7.6875Z"
-          fill="currentColor"
-        />
-        <path
-          d="M9 7.6875C8.27513 7.6875 7.6875 8.27513 7.6875 9C7.6875 9.72487 8.27513 10.3125 9 10.3125C9.72487 10.3125 10.3125 9.72487 10.3125 9C10.3125 8.27513 9.72487 7.6875 9 7.6875Z"
-          fill="currentColor"
-        />
-        <path
-          d="M14.4375 7.6875C13.7126 7.6875 13.125 8.27513 13.125 9C13.125 9.72487 13.7126 10.3125 14.4375 10.3125C15.1624 10.3125 15.75 9.72487 15.75 9C15.75 8.27513 15.1624 7.6875 14.4375 7.6875Z"
-          fill="currentColor"
-        />
-        <path
-          d="M3.5625 13.125C2.83763 13.125 2.25 13.7126 2.25 14.4375C2.25 15.1624 2.83763 15.75 3.5625 15.75C4.28737 15.75 4.875 15.1624 4.875 14.4375C4.875 13.7126 4.28737 13.125 3.5625 13.125Z"
-          fill="currentColor"
-        />
-        <path
-          d="M9 13.125C8.27513 13.125 7.6875 13.7126 7.6875 14.4375C7.6875 15.1624 8.27513 15.75 9 15.75C9.72487 15.75 10.3125 15.1624 10.3125 14.4375C10.3125 13.7126 9.72487 13.125 9 13.125Z"
-          fill="currentColor"
-        />
-        <path
-          d="M14.4375 13.125C13.7126 13.125 13.125 13.7126 13.125 14.4375C13.125 15.1624 13.7126 15.75 14.4375 15.75C15.1624 15.75 15.75 15.1624 15.75 14.4375C15.75 13.7126 15.1624 13.125 14.4375 13.125Z"
-          fill="currentColor"
-        />
-      </svg>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5625 2.25C2.83763 2.25 2.25 2.83763 2.25 3.5625C2.25 4.28737 2.83763 4.875 3.5625 4.875C4.28737 4.875 4.875 4.28737 4.875 3.5625C4.875 2.83763 4.28737 2.25 3.5625 2.25Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9 2.25C8.27513 2.25 7.6875 2.83763 7.6875 3.5625C7.6875 4.28737 8.27513 4.875 9 4.875C9.72487 4.875 10.3125 4.28737 10.3125 3.5625C10.3125 2.83763 9.72487 2.25 9 2.25Z"
+              fill="currentColor"
+            />
+            <path
+              d="M14.4375 2.25C13.7126 2.25 13.125 2.83763 13.125 3.5625C13.125 4.28737 13.7126 4.875 14.4375 4.875C15.1624 4.875 15.75 4.28737 15.75 3.5625C15.75 2.83763 15.1624 2.25 14.4375 2.25Z"
+              fill="currentColor"
+            />
+            <path
+              d="M3.5625 7.6875C2.83763 7.6875 2.25 8.27513 2.25 9C2.25 9.72487 2.83763 10.3125 3.5625 10.3125C4.28737 10.3125 4.875 9.72487 4.875 9C4.875 8.27513 4.28737 7.6875 3.5625 7.6875Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9 7.6875C8.27513 7.6875 7.6875 8.27513 7.6875 9C7.6875 9.72487 8.27513 10.3125 9 10.3125C9.72487 10.3125 10.3125 9.72487 10.3125 9C10.3125 8.27513 9.72487 7.6875 9 7.6875Z"
+              fill="currentColor"
+            />
+            <path
+              d="M14.4375 7.6875C13.7126 7.6875 13.125 8.27513 13.125 9C13.125 9.72487 13.7126 10.3125 14.4375 10.3125C15.1624 10.3125 15.75 9.72487 15.75 9C15.75 8.27513 15.1624 7.6875 14.4375 7.6875Z"
+              fill="currentColor"
+            />
+            <path
+              d="M3.5625 13.125C2.83763 13.125 2.25 13.7126 2.25 14.4375C2.25 15.1624 2.83763 15.75 3.5625 15.75C4.28737 15.75 4.875 15.1624 4.875 14.4375C4.875 13.7126 4.28737 13.125 3.5625 13.125Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9 13.125C8.27513 13.125 7.6875 13.7126 7.6875 14.4375C7.6875 15.1624 8.27513 15.75 9 15.75C9.72487 15.75 10.3125 15.1624 10.3125 14.4375C10.3125 13.7126 9.72487 13.125 9 13.125Z"
+              fill="currentColor"
+            />
+            <path
+              d="M14.4375 13.125C13.7126 13.125 13.125 13.7126 13.125 14.4375C13.125 15.1624 13.7126 15.75 14.4375 15.75C15.1624 15.75 15.75 15.1624 15.75 14.4375C15.75 13.7126 15.1624 13.125 14.4375 13.125Z"
+              fill="currentColor"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -144,10 +161,7 @@ Docs.headerByHref[page.location.pathname]}}
         class="flex justify-between {{mainPaddingX}} py-4 md:py-3 border-border-separator border-b"
         aria-label="Breadcrumb"
       >
-        <ol
-          role="list"
-          class="flex gap-3 items-center text-sm text-elements-lowEm"
-        >
+        <ol role="list" class="flex gap-3 items-center text-sm text-elements-lowEm">
           <if cond="header">
             <li>
               <a href="/">{{topic.title}}</a>
@@ -162,12 +176,12 @@ Docs.headerByHref[page.location.pathname]}}
                     viewBox="0 0 12 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
+                  >
+                    <path
                       d="M4.5 2L8.5 5.99999L4.5 10"
                       stroke="currentColor"
                       stroke-linecap="square"
-                      />
+                    />
                   </svg>
                 </div>
                 <a href="{{header.href}}">{{breadcrumb}}</a>
@@ -195,8 +209,8 @@ Docs.headerByHref[page.location.pathname]}}
 
                 <p class="text-sm">Home</p>
               </a>
-            </li></else
-          >
+            </li>
+          </else>
         </ol>
 
         <!-- Explore Snowball button -->
@@ -230,26 +244,23 @@ Docs.headerByHref[page.location.pathname]}}
             <div class="flex flex-col border-l border-sky-950/opacity-5 gap-0.5">
               <if cond="header && header.tableOfContents">
                 <ul class="flex flex-col gap-1 pl-4 text-sm font-normal text-sky-950">
-              <for let="tableOfContentObject of header.tableOfContents">
-   
-                <li class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}">
-                  <div class="justify-start items-baseline gap-2 inline-flex">
-                    <div class="tableOfContentItem-eclipse">•</div>
-                    <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
-                  </div>
-                </li>
-  
-                </for>
-              </ul>
+                  <for let="tableOfContentObject of header.tableOfContents">
+                    <li
+                      class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}"
+                    >
+                      <div class="justify-start items-baseline gap-2 inline-flex">
+                        <div class="tableOfContentItem-eclipse">•</div>
+                        <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
+                      </div>
+                    </li>
+                  </for>
+                </ul>
               </if>
-  
-            </if>
+            </div>
           </div>
         </div>
-          </div>
-        
-    
-        </div>  
+      </div>
     </div>
-  <script src="/layout.js"></script>
+    <script src="/layout.js"></script>
+  </div>
 </div>

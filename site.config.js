@@ -1,9 +1,9 @@
-import * as Docs from "./lib/docs";
+import * as Docs from './lib/docs'
 
 export default {
-  name: "Snowballtools Docs – A free, advanced course for Solidity Developers",
-  origin: "https://docs.snowballtools.xyz",
-  locales: ["en"],
+  name: 'Snowballtools Docs – A free, advanced course for Solidity Developers',
+  origin: 'https://docs.snowballtools.xyz',
+  locales: ['en'],
 
   static: true,
   locals: {
@@ -14,4 +14,4 @@ export default {
       return `<div class="prose">${Docs.renderDocsContent(content)}</div>`
     },
   },
-};
+}

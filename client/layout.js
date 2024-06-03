@@ -1,7 +1,7 @@
-import Alpine from "alpinejs";
-import collapse from "@alpinejs/collapse";
+import collapse from '@alpinejs/collapse'
+import Alpine from 'alpinejs'
 
-window.Alpine = Alpine;
+window.Alpine = Alpine
 
-Alpine.plugin(collapse);
-Alpine.start();
+Alpine.plugin(collapse)
+Alpine.start()

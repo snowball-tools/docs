@@ -1,17 +1,13 @@
 module.exports = {
-  plugins: ["@trivago/prettier-plugin-sort-imports"],
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
   semi: false,
-  trailingComma: "all",
+  trailingComma: 'all',
   printWidth: 100,
   singleQuote: true,
   tabWidth: 2,
-  arrowParens: "always",
-  importOrder: [
-    "^@snowballtools/(.*)$",
-    "<THIRD_PARTY_MODULES>",
-    "^[./]",
-    "^[../]",
-  ],
+  arrowParens: 'always',
+  importOrder: ['^@snowballtools/(.*)$', '<THIRD_PARTY_MODULES>', '^[./]', '^[../]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-};
+  htmlWhitespaceSensitivity: 'ignore',
+}

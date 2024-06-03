@@ -22,9 +22,5 @@ When writing custom tags such as `<aside>`, etc. in markdown content, be sure to
 ```html
 Some content
 
-<aside>
-
-My aside content
-
-</aside>
+<aside>My aside content</aside>
 ```

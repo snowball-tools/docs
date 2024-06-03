@@ -66,20 +66,40 @@
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                >
+              >
                 <path
-                d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
+                  d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
                   stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  />
+                />
               </svg>
             </button>
-            <div x-cloak x-show="menuOpen" @click.away="menuOpen = false" class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2">
+            <div
+              x-cloak
+              x-show="menuOpen"
+              @click.away="menuOpen = false"
+              class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2"
+            >
               <!-- //TODO: Add proper href link -->
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.21</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.20</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.19</a> 
+              <a
+                href="#"
+                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+              >
+                v2.21
+              </a>
+              <a
+                href="#"
+                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+              >
+                v2.20
+              </a>
+              <a
+                href="#"
+                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+              >
+                v2.19
+              </a>
             </div>
           </div>
 
@@ -122,14 +142,14 @@
             viewBox="0 0 18 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            >
+          >
             <path
               d="M15.1875 15.1875L12.0949 12.0949M12.0949 12.0949C13.0789 11.1109 13.6875 9.75152 13.6875 8.25C13.6875 5.24695 11.253 2.8125 8.25 2.8125C5.24695 2.8125 2.8125 5.24695 2.8125 8.25C2.8125 11.253 5.24695 13.6875 8.25 13.6875C9.75152 13.6875 11.1109 13.0789 12.0949 12.0949Z"
               stroke="currentColor"
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              />
+            />
           </svg>
           <p class="text-elements-disabled text-sm">Search</p>
         </div>
@@ -192,16 +212,12 @@
             <h3 class="sidebar-title">{{topic.title}}</h3>
           </div>
           <for let="header of topic.headers">
-            {{var active = header.href === page.location.pathname}} {{var
-            hasSubpages = !!header.headers}} {{var hasActiveSubpage =
-            !!header.headers && !!header.headers.find(subpage => subpage.href
-            === page.location.pathname)}}
+            {{var active = header.href === page.location.pathname}} {{var hasSubpages =
+            !!header.headers}} {{var hasActiveSubpage = !!header.headers &&
+            !!header.headers.find(subpage => subpage.href === page.location.pathname)}}
             <if cond="hasSubpages">
               <!-- Chapter main navigation -->
-              <div
-                class="flex flex-col gap-0.5"
-                x-data="{ expanded: {{hasActiveSubpage}} }"
-              >
+              <div class="flex flex-col gap-0.5" x-data="{ expanded: {{hasActiveSubpage}} }">
                 <!-- Chapter navigation item -->
                 <button
                   class="flex py-1.5 px-3 w-full items-center justify-between sidebar-subs-nav-item"
@@ -256,13 +272,8 @@
                 </button>
 
                 <for let="headerSubpage of header.headers">
-                  {{var activeSubpage = headerSubpage.href ===
-                  page.location.pathname}}
-                  <div
-                    class="flex flex-col gap-0.5"
-                    x-show="expanded"
-                    x-collapse
-                  >
+                  {{var activeSubpage = headerSubpage.href === page.location.pathname}}
+                  <div class="flex flex-col gap-0.5" x-show="expanded" x-collapse>
                     <!-- Chapter nav sub item -->
                     <a
                       href="{{headerSubpage.href}}"

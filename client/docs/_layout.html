@@ -6,10 +6,7 @@
 Docs.headerByHref[page.location.pathname]}}
 
 <meta charset="UTF-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 <meta lancer />
 
@@ -20,10 +17,7 @@ Docs.headerByHref[page.location.pathname]}}
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/styles/global.css" />
 <link rel="stylesheet" type="text/css" href="/styles/animation.css" />
 
@@ -76,7 +70,10 @@ Docs.headerByHref[page.location.pathname]}}
 
       <div class="flex items-center gap-2">
         <!-- //TODO: Mobile Search, change to clickable button -->
-        <button @click="modalOpen = !modalOpen" class="w-8 h-8 grid place-content-center text-elements-lowEm">
+        <button
+          @click="modalOpen = !modalOpen"
+          class="w-8 h-8 grid place-content-center text-elements-lowEm"
+        >
           <!-- Magnifying glass icon -->
           <svg
             width="18"
@@ -95,36 +92,56 @@ Docs.headerByHref[page.location.pathname]}}
           </svg>
         </button>
 
-          <!-- Version dropdown -->
-          <div x-data="{ menuOpen: false }" class="relative">
-            <button
-              class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
-              @click="menuOpen = !menuOpen"
+        <!-- Version dropdown -->
+        <div x-data="{ menuOpen: false }" class="relative">
+          <button
+            class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
+            @click="menuOpen = !menuOpen"
+          >
+            <p class="font-mono text-xs text-elements-midEm">v2.21</p>
+            <!-- Chevron grabber icon -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-              <!-- Chevron grabber icon -->
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path
+              <path
                 d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  />
-              </svg>
-            </button>
-            <div x-cloak x-show="menuOpen" @click.away="menuOpen = false" class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2">
-              <!-- //TODO: Add proper href link -->
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.21</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.20</a> 
-              <a href="#" class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate">v2.19</a> 
-            </div>
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div
+            x-cloak
+            x-show="menuOpen"
+            @click.away="menuOpen = false"
+            class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2"
+          >
+            <!-- //TODO: Add proper href link -->
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.21
+            </a>
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.20
+            </a>
+            <a
+              href="#"
+              class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
+            >
+              v2.19
+            </a>
           </div>
+        </div>
 
         <!-- Menu button -->
         <button
@@ -186,10 +203,7 @@ Docs.headerByHref[page.location.pathname]}}
         class="flex justify-between {{mainPaddingX}} py-4 md:py-3 border-border-separator border-b"
         aria-label="Breadcrumb"
       >
-        <ol
-          role="list"
-          class="flex gap-3 items-center text-sm text-elements-lowEm"
-        >
+        <ol role="list" class="flex gap-3 items-center text-sm text-elements-lowEm">
           <if cond="header">
             <li>
               <a href="/">{{topic.title}}</a>
@@ -204,12 +218,12 @@ Docs.headerByHref[page.location.pathname]}}
                     viewBox="0 0 12 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
+                  >
+                    <path
                       d="M4.5 2L8.5 5.99999L4.5 10"
                       stroke="currentColor"
                       stroke-linecap="square"
-                      />
+                    />
                   </svg>
                 </div>
                 <a href="{{header.href}}">{{breadcrumb}}</a>
@@ -237,8 +251,8 @@ Docs.headerByHref[page.location.pathname]}}
 
                 <p class="text-sm">Home</p>
               </a>
-            </li></else
-          >
+            </li>
+          </else>
         </ol>
 
         <!-- Explore Snowball button -->
@@ -265,34 +279,30 @@ Docs.headerByHref[page.location.pathname]}}
         </button>
       </nav>
 
-        <div class="flex flex-col items-center {{mainPaddingX}} py-4 md:py-8 lg:py-12">
-          <div class="flex">
-
+      <div class="flex flex-col items-center {{mainPaddingX}} py-4 md:py-8 lg:py-12">
+        <div class="flex">
           <yield />
           <div class="py-14">
-          <div class="flex flex-col border-l border-sky-950/opacity-5 gap-0.5">
-            <if cond="header && header.tableOfContents">
-              <ul class="flex flex-col gap-4 px-4 text-sm font-normal text-sky-950">
-            <for let="tableOfContentObject of header.tableOfContents">
- 
-              <li class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}">
-                <div class="justify-start items-baseline gap-2 inline-flex">
-                  <div class="tableOfContentItem-eclipse">•</div>
-                  <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
-                </div>
-              </li>
-
-              </for>
-            </ul>
-            </if>
-
-          </if>
+            <div class="flex flex-col border-l border-sky-950/opacity-5 gap-0.5">
+              <if cond="header && header.tableOfContents">
+                <ul class="flex flex-col gap-4 px-4 text-sm font-normal text-sky-950">
+                  <for let="tableOfContentObject of header.tableOfContents">
+                    <li
+                      class="tableOfContentItem tableOfContentItem-level-{{Number(tableOfContentObject.level)}}"
+                    >
+                      <div class="justify-start items-baseline gap-2 inline-flex">
+                        <div class="tableOfContentItem-eclipse">•</div>
+                        <a href="{{tableOfContentObject.href}}">{{tableOfContentObject.title}}</a>
+                      </div>
+                    </li>
+                  </for>
+                </ul>
+              </if>
+            </div>
+          </div>
         </div>
       </div>
-        </div>
-      
-  
-      </div>  
+    </div>
+    <script src="/docs/layout.js"></script>
   </div>
-  <script src="/docs/layout.js"></script>
 </div>

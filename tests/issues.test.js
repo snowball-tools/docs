@@ -1,8 +1,7 @@
 const o = require('ospec')
 const { parseNotionMarkdownIssues } = require('../lib/issues')
 
-o.spec('parseNotionMarkdownIssues', function() {
-
+o.spec('parseNotionMarkdownIssues', function () {
   o('splits by issue', () => {
     const result = parseNotionMarkdownIssues(`
       ## (H-1) a

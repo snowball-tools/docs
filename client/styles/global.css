@@ -1,9 +1,9 @@
-@import "./inputs.css";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "./_prose.css";
-@import "./sidebar.css";
+@import './inputs.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './_prose.css';
+@import './sidebar.css';
 
 body {
   @apply bg-canvas text-zinc-100;
