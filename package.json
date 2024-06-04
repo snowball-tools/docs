@@ -24,6 +24,7 @@
     "alpinejs": "^3.10.5",
     "assert": "^2.0.0",
     "endent": "^2.1.0",
+    "highlight.js": "^11.9.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-toc-done-right": "^4.2.0",
