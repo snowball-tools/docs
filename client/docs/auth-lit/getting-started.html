@@ -1,0 +1,41 @@
+<page title="Course Overview" layout="/_layout.html">
+
+<template type="docs-page">
+
+# Getting Started with Lit Wallet Auth
+
+[Lit](https://www.litprotocol.com) is a distributed protocol that can be used to generate and manage user wallets.
+
+This guide will walk you through the process of setting up Lit Wallet Auth in your application.
+
+## Installation
+
+First make sure you have [installed](/#installation) the base Snowball JS SDK package.
+
+Next, install the Snowball Lit Auth package:
+
+```bash
+npm install @snowballtools/lit-auth
+```
+
+## Usage
+
+To use Lit Wallet Auth, you will need to import the package and initialize each provider with your Lit API key.
+
+Here is an example of using both Google Auth:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
+import { LitGoogleAuth } from '@snowballtools/auth-lit'
+
+export const snowball = Snowball.withAuth({
+  google: LitGoogleAuth.configure({
+    litRelayApiKey: 'your-lit-api-key'
+  })
+}).create({
+  apiKey: 'your-snowball-api-key',
+  initialChain: SnowballChain.sepolia
+})
+```
+
+</template>

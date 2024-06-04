@@ -1,0 +1,47 @@
+<page title="Installation" layout="/_layout.html">
+
+<template type="docs-page">
+
+## Installation
+
+To get started with Snowball, you need to install the Snowball SDK. You can do this by running the following command:
+
+```bash
+npm install @snowballtools/js-sdk
+```
+
+Once you have installed the SDK, you can import it into your project and start using it:
+
+```js
+import { Snowball } from '@snowballtools/js-sdk';
+```
+
+## Import
+
+To use the Snowball SDK, first obtain an API key by signing up on the Snowball website.
+
+Once you have an API key, creating a snowball instance will look similar to the following:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk';
+
+export const snowball = Snowball
+  .withAuth({
+    google: ...,
+    passkey: ...,
+  })
+  .withSmartWallet(...) // Optional
+  .create({
+    apiKey: 'your-snowball-api-key',
+    initialChain: SnowballChain.sepolia,
+  })
+```
+
+<aside>
+
+See the next several sections for more information on how to configure the `withAuth` and `withSmartWallet` options.
+
+</aside>
+
+
+</template>

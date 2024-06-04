@@ -12,7 +12,7 @@ Docs.headerByHref[page.location.pathname]}}
 
 <include
   src="./_social-meta.html"
-  locals="{ title: title, description: header.subtitle, image: '/previews/' + header.id + '.png' }"
+  locals="{ title: header.meta.title || title, description: header.meta.description, image: '/previews/' + header.id + '.png' }"
 />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -8,7 +8,7 @@
   <div class="p-8 flex gap-8 flex-col md:h-0 flex-1">
     <!-- Logo and Version -->
     <div class="flex flex-shrink-0">
-      <div class="flex w-full justify-between items-center">
+      <div class="flex w-full justify-between items-center gap-2">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-2">
           <!-- Snowball logo -->
@@ -184,23 +184,23 @@
       <!-- Main navigation -->
       <div class="flex flex-col gap-1 text-elements-highEm">
         <!-- Nav item -->
-        <a href="/">
-          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
-            <img src="/library/home.svg" alt="Home Icon" />
-            <p>Home</p>
-          </div>
+        <a href="/" class="{{page.location.pathname === '/' ? 'text-controls-primary' : 'text-elements-highEm'}} flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" clip-rule="evenodd" d="M8.44074 1.63482C9.40597 1.07908 10.594 1.07908 11.5593 1.63482L15.9343 4.15376C16.903 4.7115 17.5 5.74417 17.5 6.86196V14.3749C17.5 16.1008 16.1009 17.4999 14.375 17.4999H5.625C3.89911 17.4999 2.5 16.1008 2.5 14.3749V6.86196C2.5 5.74417 3.09703 4.7115 4.06574 4.15376L8.44074 1.63482ZM7.29167 10.2082C7.29167 8.71247 8.50423 7.49991 10 7.49991C11.4958 7.49991 12.7083 8.71247 12.7083 10.2082C12.7083 11.704 11.4958 12.9166 10 12.9166C8.50423 12.9166 7.29167 11.704 7.29167 10.2082Z" />
+          </svg>
+          <p>Introduction</p>
         </a>
-        <a href="/changelog">
-          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
-            <img src="/library/changelog.svg" alt="Changelog Icon" />
-            <p>Changelog</p>
-          </div>
+        <a href="/changelog" class="{{page.location.pathname === '/changelog' ? 'text-controls-primary' : 'text-elements-highEm'}} flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M9.99984 6.45841V10.0001L12.2915 12.2917M17.7082 10.0001C17.7082 14.2573 14.257 17.7084 9.99984 17.7084C5.74264 17.7084 2.2915 14.2573 2.2915 10.0001C2.2915 5.74289 5.74264 2.29175 9.99984 2.29175C14.257 2.29175 17.7082 5.74289 17.7082 10.0001Z" />
+          </svg>
+          <p>Changelog</p>
         </a>
-        <a href="/resources">
-          <div class="flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
-            <img src="/library/resources.svg" alt="Resources Icon" />
-            <p>Resources</p>
-          </div>
+        <a href="/resources" class="{{page.location.pathname === '/resources' ? 'text-controls-primary' : 'text-elements-highEm'}} flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M15.2414 13.5417H16.0418C17.4225 13.5417 18.5418 12.4224 18.5418 11.0417V7.29167C18.5418 5.91095 17.4225 4.79167 16.0418 4.79167H12.3572C11.9152 4.79167 11.4912 4.61607 11.1787 4.30351L10.4883 3.61316C10.1758 3.30059 9.75183 3.125 9.30981 3.125H7.29183C5.91112 3.125 4.79183 4.24429 4.79183 5.625V6.45833M1.4585 14.375V8.95833C1.4585 7.57762 2.57778 6.45833 3.9585 6.45833H5.97647C6.4185 6.45833 6.84242 6.63393 7.15498 6.94649L7.84534 7.63685C8.1579 7.94941 8.58182 8.125 9.02385 8.125H12.7085C14.0892 8.125 15.2085 9.24429 15.2085 10.625V14.375C15.2085 15.7557 14.0892 16.875 12.7085 16.875H3.9585C2.57778 16.875 1.4585 15.7557 1.4585 14.375Z" />
+          </svg>
+          <p>Resources</p>
         </a>
       </div>
 
@@ -212,9 +212,9 @@
             <h3 class="sidebar-title">{{topic.title}}</h3>
           </div>
           <for let="header of topic.headers">
-            {{var active = header.href === page.location.pathname}} {{var hasSubpages =
-            !!header.headers}} {{var hasActiveSubpage = !!header.headers &&
-            !!header.headers.find(subpage => subpage.href === page.location.pathname)}}
+            {{var active = header.href === page.location.pathname}}
+            {{var hasSubpages = !!header.headers}}
+            {{var hasActiveSubpage = !!header.headers && !!header.headers.find(subpage => subpage.href === page.location.pathname)}}
             <if cond="hasSubpages">
               <!-- Chapter main navigation -->
               <div class="flex flex-col gap-0.5" x-data="{ expanded: {{hasActiveSubpage}} }">

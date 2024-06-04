@@ -11,7 +11,7 @@ export default {
   },
   templateTypes: {
     'docs-page'(content) {
-      return `<div class="prose">${Docs.renderDocsContent(content)}</div>`
+      return Docs.renderDocsContent(content)
     },
   },
 }

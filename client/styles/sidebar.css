@@ -3,7 +3,7 @@
 }
 
 .sidebar-main-nav-item {
-  @apply text-elements-highEm hover:text-elements-link-hovered cursor-pointer;
+  @apply hover:text-elements-link-hovered cursor-pointer;
 
   p {
     @apply font-sans text-sm font-medium;
@@ -15,10 +15,6 @@
 
   p {
     @apply font-sans text-sm;
-  }
-
-  svg {
-    @apply text-border-interactive-hover hover:text-elements-link-hovered;
   }
 }
 

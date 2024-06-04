@@ -1,0 +1,46 @@
+<page title="General Usage" layout="/_layout.html">
+
+<template type="docs-page">
+
+## General Usage
+
+Regardless of which auth, smart wallet, and onboarding/offboarding providers you choose, your Snowball SDK usage will look similar to the following:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk';
+
+export const snowball = Snowball
+  .withAuth({
+    google: ...,
+    passkey: ...,
+  })
+  .withSmartWallet(...) // Optional
+  .create({
+    apiKey: 'your-snowball-api-key',
+    initialChain: SnowballChain.sepolia,
+  })
+```
+
+Once you have this instance, you have access to several functions that will be useful for integrating Snowball into your application.
+
+## `snowball.chain`
+
+Gets an instance of a SnowballChain, which represents the current chain that the user is interacting with.
+
+```js
+const chain = snowball.chain
+```
+
+## `snowball.auth`
+
+Gets a mapping of the auth providers that are currently enabled.
+
+For example, if you defined `google: ...` in the `withAuth` function, you can access the Google auth provider like so:
+
+```js
+const google = snowball.auth.google
+```
+
+This value will be typed to the specific auth provider that you defined in the `withAuth` function.
+
+</template>
