@@ -182,7 +182,7 @@
       </button>
 
       <!-- Main navigation -->
-      <div class="flex flex-col gap-1 text-elements-highEm">
+      <div class="flex flex-col gap-1 text-elements-highEm antialiased">
         <!-- Nav item -->
         <a href="/" class="{{page.location.pathname === '/' ? 'text-controls-primary' : 'text-elements-highEm'}} flex py-1.5 px-3 w-full gap-3 items-center sidebar-main-nav-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -206,7 +206,7 @@
 
       <for let="topic of Docs.outline">
         <!-- Chapter navigation -->
-        <div class="flex flex-col gap-0.5">
+        <div class="flex flex-col gap-0.5 antialiased">
           <!-- Chapter title -->
           <div class="flex px-3 py-2">
             <h3 class="sidebar-title">{{topic.title}}</h3>
