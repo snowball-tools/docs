@@ -52,56 +52,7 @@
         </a>
 
         <div class="flex gap-3 items-center">
-          <!-- Version dropdown -->
-          <div x-data="{ menuOpen: false }" class="relative">
-            <button
-              class="bg-white rounded-full shadow-dropdown hover:shadow-none hover:translate-y-0.5 flex gap-1.5 py-2 px-3 text-elements-disabled"
-              @click="menuOpen = !menuOpen"
-            >
-              <p class="font-mono text-xs text-elements-midEm">v2.21</p>
-              <!-- Chevron grabber icon -->
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.3335 9.99992L8.00016 12.6666L10.6668 9.99992M5.3335 5.99992L8.00016 3.33325L10.6668 5.99992"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              x-cloak
-              x-show="menuOpen"
-              @click.away="menuOpen = false"
-              class="origin-top-right absolute right-0 mt-2 max-w-24 w-fit rounded-md shadow-modal bg-white px-2 py-2"
-            >
-              <!-- //TODO: Add proper href link -->
-              <a
-                href="#"
-                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
-              >
-                v2.21
-              </a>
-              <a
-                href="#"
-                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
-              >
-                v2.20
-              </a>
-              <a
-                href="#"
-                class="block rounded-sm px-4 py-2 text-sm text-elements-highEm hover:text-elements-link hover:bg-base-bg-alternate"
-              >
-                v2.19
-              </a>
-            </div>
-          </div>
+          <include src="partials/_version-dropdown.html"></include>
 
           <!-- Mobile close menu button -->
           <button
