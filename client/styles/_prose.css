@@ -1,7 +1,7 @@
 /* Extensions to tailwind's typography plugin */
 
 .prose {
-  max-width: 80ch;
+  max-width: 72ch;
   width: auto;
 
   @apply p-5 md:p-10;
