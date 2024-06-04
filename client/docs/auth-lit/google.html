@@ -1,0 +1,101 @@
+<page title="Lit Google Auth" layout="/_layout.html">
+
+<template type="docs-page">
+
+## Using with Lit Google Auth
+
+Lit provides a simple way to integrate Google authentication into your application.
+This guide will walk you through the process of setting up Google authentication with Lit.
+
+## Getting Started
+
+First ensure you've installed the necessary packages:
+
+```bash
+npm install @snowballtools/js-sdk @snowballtools/auth-lit
+```
+
+Then initialize Snowball with Google auth:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
+import { LitGoogleAuth } from '@snowballtools/auth-lit'
+
+const snowball = Snowball.withAuth({
+  google: LitGoogleAuth.configure({
+    litRelayApiKey: 'your-lit-relay-api-key',
+  })
+}).create({
+  apiKey: 'your-snowball-api-key',
+  initialChain: SnowballChain.sepolia
+});
+```
+
+## Usage
+
+There are three key points you need to interact with Google auth:
+
+1. Initiating login with `startOAuthRedirect()`
+2. Handling the redirect back from Google with `handleOAuthRedirectBack()`
+3. Getting the corresponding wallet with `getEthersWallet()`
+
+There is also the additional `canHandleOAuthRedirectBack()` function, which is useful for
+determining whether or not the current page load is a redirect back from Google.
+
+Note that these are functions on the `snowball.auth.google` object, so you would access them like so:
+
+```js
+snowball.auth.google.startOAuthRedirect()
+snowball.auth.google.canHandleOAuthRedirectBack()
+snowball.auth.google.handleOAuthRedirectBack()
+snowball.auth.google.getEthersWallet()
+```
+
+## React Example
+
+Here's an example of how you might use Google auth in a React application.
+
+First make sure you've initialized Snowball as shown above, as well as [integrated the useSnowball hook](/docs/core/react).
+
+Then you can use the `useSnowball` hook to access your Snowball instance:
+
+```js
+function LoginComponent() {
+  const snowball = useSnowball()
+  const google = snowball.auth.google
+
+  async function handleSigninRedirect() {
+    if (!google.canHandleOAuthRedirectBack()) {
+      return
+    }
+    await google.handleOAuthRedirectBack()
+
+    // Gets the wallet attached to the user's Google account 😃
+    const wallet = await google.getEthersWallet()
+  }
+
+  useEffect(() => {
+    // Check on page load
+    handleSigninRedirect()
+  }, [])
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          google.startOAuthRedirect();
+        }}
+        disabled={!!google.state.loading}
+      >
+        Login with Google
+      </button>
+
+      {google.state.error && (
+        <div>Error logging in: {error}</div>
+      )}
+    </div>
+  )
+}
+```
+
+</template>

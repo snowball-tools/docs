@@ -1,0 +1,60 @@
+<page title="Using with React" layout="/_layout.html">
+
+<template type="docs-page">
+
+## Using with React
+
+Snowball is designed to be used with any front-end framework, including React.
+
+Here's how you can hook Snowball state into your React application:
+
+```js
+const snowball = Snowball.withAuth({
+  // google: ...
+}).create({
+  apiKey: 'your-snowball-api-key',
+  initialChain: SnowballChain.sepolia,
+})
+
+export function useSnowball() {
+  const [state, setState] = useState(100) // Value doesn't matter
+
+  useEffect(() => {
+    // Subscribe and directly return the unsubscribe function
+    return snowball.subscribe(() => setState(state + 1))
+  }, [state])
+
+  return snowball
+}
+```
+
+Then, elsewhere in your application, you can use the `useSnowball` hook to access your Snowball instance:
+
+```js
+function MyComponent() {
+  const snowball = useSnowball()
+  const google = snowball.auth.google
+
+  function handleRedirectBack() {
+    // ...
+  }
+
+  return (
+    <button
+      onClick={() => {
+        google.startOAuthRedirect()
+      }}
+    >
+      {google.state.loading ? 'Loading...' : 'Sign in with Google'}
+    </button>
+  )
+}
+```
+
+<aside title="The above example is incomplete for Google auth!">
+
+To see a full example of how to use Snowball with Google signin, see the Lit Wallet Google Auth docs.
+
+</aside>
+
+</template>

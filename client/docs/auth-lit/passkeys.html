@@ -1,0 +1,48 @@
+<page title="Lit Passkey Auth" layout="/_layout.html">
+
+<template type="docs-page">
+
+## Using with Lit Passkey Auth
+
+Lit provides a simple way to integrate passkeys authentication into your application.
+This guide will walk you through the process of setting up user passkeys authentication with Lit.
+
+## Getting Started
+
+First ensure you've installed the necessary packages:
+
+```bash
+npm install @snowballtools/js-sdk @snowballtools/auth-lit
+```
+
+Then initialize Snowball with passkey auth:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
+import { LitPasskeyAuth } from '@snowballtools/auth-lit'
+
+const snowball = Snowball.withAuth({
+  passkey: LitPasskeyAuth.configure({
+    litRelayApiKey: 'your-lit-relay-api-key',
+  })
+}).create({
+  apiKey: 'your-snowball-api-key',
+  initialChain: SnowballChain.sepolia
+});
+```
+
+## Usage
+
+There are two key points you need to interact with passkey auth:
+
+1. Creating a passkey with `register(username)`
+2. Authenticating with a passkey with `authenticate`
+
+Note that these are functions on the `snowball.auth.passkey` object, so you would access them like so:
+
+```js
+snowball.auth.passkey.register('someUsername')
+snowball.auth.passkey.authenticate()
+```
+
+</template>
