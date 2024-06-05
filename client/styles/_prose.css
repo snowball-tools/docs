@@ -15,7 +15,7 @@
 .prose h6 {
   position: relative;
   /* WARNING: Text colors must be in sync with the .HeadingAnchor class */
-  @apply antialiased text-elements-highEm;
+  @apply font-header font-normal text-elements-highEm;
 }
 
 .prose h1 {

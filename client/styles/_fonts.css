@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'studiofeixen';
+  src: url('/font/StudioFeixenSans-Regular.eot');
+  src: url('/font/StudioFeixenSans-Regular.eot') format('embedded-opentype'), url('/font/StudioFeixenSans-Regular.woff2') format('woff2'), url('/font/StudioFeixenSans-Regular') format('woff'), url('/font/StudioFeixenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

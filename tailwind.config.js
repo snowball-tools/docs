@@ -361,6 +361,7 @@ module.exports = {
           ),
         brand: [`'AllRoundGothic-Thick.otf'`, 'monospace'],
         'mono-brand': [`'Cutive Mono'`, 'monospace'],
+        header: ['studiofeixen', '"Inter"', 'sans-serif'],
       },
       fontSize: {
         lg: ['1.0625rem', '1.75'], // 17px instead of 18px
