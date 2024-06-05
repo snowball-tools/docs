@@ -1,10 +1,12 @@
 @import './_fonts.css';
-@import './inputs.css';
+@import './_inputs.css';
+@import './_animations.css';
+@import './_sidebar.css';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './_prose.css';
-@import './sidebar.css';
+
 @import 'highlight.js/styles/vs.css';
 
 /* Consider for dark mode */
