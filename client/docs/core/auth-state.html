@@ -1,0 +1,47 @@
+<page title="Auth State" layout="/_layout.html">
+
+<template type="docs-page">
+
+## Auth State
+
+Snowball provides a state object to observe and interact with the current auth state of the user.
+This allows your application to easily determine whether or not the user is authenticated, as well as indications of loading and error states.
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk';
+
+const snowball = Snowball
+  .withAuth({
+    google: ...,
+  })
+  .create({
+    apiKey: 'your-snowball-api-key',
+    initialChain: SnowballChain.sepolia,
+  })
+
+
+```
+
+Once you have this instance, you have access to several functions that will be useful for integrating Snowball into your application.
+
+## `snowball.chain`
+
+Gets an instance of a SnowballChain, which represents the current chain that the user is interacting with.
+
+```js
+const chain = snowball.chain
+```
+
+## `snowball.auth`
+
+Gets a mapping of the auth providers that are currently enabled.
+
+For example, if you defined `google: ...` in the `withAuth` function, you can access the Google auth provider like so:
+
+```js
+const google = snowball.auth.google
+```
+
+This value will be typed to the specific auth provider that you defined in the `withAuth` function.
+
+</template>
