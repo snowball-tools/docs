@@ -92,6 +92,14 @@ a.header-anchor {
   @apply hover:underline;
 }
 
+.prose .Diagram {
+  display: flex;
+  justify-content: center;;
+}
+.prose .Diagram img {
+  margin: 0;
+}
+
 h1:hover a.header-anchor,
 h2:hover a.header-anchor,
 h3:hover a.header-anchor,

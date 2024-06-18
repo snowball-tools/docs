@@ -1,0 +1,32 @@
+<page title="Embedded Wallets: Getting Started" layout="/_layout.html">
+
+<template type="docs-page">
+
+# Getting Started
+
+To get started with embedded wallets, first install the dependencies:
+
+```bash
+npm install @snowballtools/js-sdk @snowballtools/auth-wallets
+```
+
+Then initialize Snowball with the embedded wallets feature:
+
+```js
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
+import { EmbeddedAuth } from '@snowballtools/auth-embedded'
+
+export const snowball = Snowball.withAuth({
+  embedded: EmbeddedAuth.configure({
+    auth: { email: true }
+    passkeys: {
+      rpid: 'localhost' // example.com in production
+    }
+  })
+}).create({
+  apiKey: 'your-snowball-api-key',
+  initialChain: SnowballChain.sepolia
+})
+```
+
+</template>

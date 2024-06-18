@@ -1,0 +1,48 @@
+<page title="Account Abstraction: Alchemy" layout="/_layout.html">
+
+<template type="docs-page">
+
+# Lit &lt;&gt; Alchemy Account Abstraction
+
+Snowball offers simple APIs to integrate Alchemy's [account abstraction](/docs/account-abstraction/introduction) features intor your application. It hooks into Snowball's existing auth API, allowing you to set everything up in one seamless package.
+
+This guide will walk you through setting up account abstraction with Alchemy + [Lit auth](/docs/auth-lit/getting-started) in your application.
+
+## Getting Started
+
+To get started with account abstraction, first install the dependencies:
+
+```bash
+npm install @snowballtools/js-sdk @snowballtools/auth-lit @snowballtools/link-lit-alchemy-light
+```
+
+Then initialize Snowball with both auth and smart wallet features:
+
+```js
+import { LitPasskeyAuth } from '@snowballtools/auth-lit'
+import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
+import { LinkLitAlchemyLight } from '@snowballtools/link-lit-alchemy-light'
+
+import { alchemyApiKey_sepolia, alchemyGasPolicyId_sepolia, litRelayApiKey } from './constants'
+
+export const snowball = Snowball.withAuth({
+  passkey: LitPasskeyAuth.configure({ litRelayApiKey }),
+})
+  .withSmartWallet(
+    LinkLitAlchemyLight.pkpEthersWallet.configure({
+      alchemyApiKeys: {
+        [SnowballChain.sepolia.chainId]: {
+          apiKey: alchemyApiKey_sepolia,
+          gasPolicyId: alchemyGasPolicyId_sepolia,
+        },
+      },
+    }),
+  )
+  .create({
+    initialChain: SnowballChain.sepolia,
+  })
+```
+
+Although this example uses LitPasskeyAuth, you can swap it with any Lit auth that Snowball provides.
+
+</template>

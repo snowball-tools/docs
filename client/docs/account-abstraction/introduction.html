@@ -1,0 +1,44 @@
+<page title="Account Abstraction: Introduction" layout="/_layout.html">
+
+<template type="docs-page">
+
+# Introduction to Account Abstraction
+
+[Account abstraction](https://www.erc4337.io) – also known as ERC-4337 – is the leading initiative for making Ethereum wallets more programmable. Similar to how smart contracts can hold funds and execute code, account abstraction allows wallets to do the same.
+
+Account abstraction allows you to build applications that can:
+
+- **Create wallets** for users without them needing to install a wallet app.
+- **Manage funds** on behalf of users, in a decentralized manner.
+- **Automate transactions** based on user-defined and smart contract defined rules.
+- **Sponsor transactions** for users, by paying for their gas fees.
+
+Importantly, this is all possible to do securely without your application ever needing access to a user's private keys.
+
+## How it Works
+
+Account abstraction introduces a few new concepts, all necessary to make the system work:
+
+<diagram src="/img/diagrams/aa.png" />
+
+Let's start with some terms:
+
+- A **Smart Wallet** – also known as a Smart Contract Account – is a smart contract that can hold funds and execute code. It is the core of account abstraction.
+- A **User Operation** is an intent to perform an action on the blockchain. It is signed by an EOA and submitted to the blockchain.
+- An **Entry Point** is a smart contract that acts as a gateway for user operations. It is responsible for validating and executing user operations for a Smart Wallet.
+
+Now let's go over the steps in the diagram:
+
+1. The EOA account that *owns* the Smart Wallet – or mere has sufficient access to – **signs** a User Operation that should be executed by the Smart Wallet.
+2. The user op gets sent to the **Bundler**
+3. The Bundler packages the user op into a **Bundle Transaction**, which may contain other user ops for other smart wallets.
+4. The Bundle Transaction is submitted to the blockchain, specifically to the **Entry Point**.
+5. The Entry Point validates each user op in the Bundle Transaction.
+6. (Optional) The Entry Point pulls a **gas sponsorship** from a **Paymaster**, if a paymaster is willing to sponsor it.
+7. The Entry Point executes the user op on the Smart Wallet.
+
+## How Snowball Helps You
+
+There are several providers that offer account abstraction libraries and support. Snowball connects you with the best of them, with a consistent and easy-to-use API.
+
+</template>

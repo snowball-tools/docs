@@ -1,0 +1,52 @@
+<page title="Embedded Wallets: Concepts" layout="/_layout.html">
+
+<template type="docs-page">
+
+# Embedded Wallets: Concepts
+
+Before diving into the technical details of embedded wallets, let's go over how your application interacts with Snowball's embedded wallets
+at a high level.
+
+Below are the four core moving pieces:
+
+<diagram src="/img/diagrams/concept-schema.png" max-height="400px" />
+
+- **User** – A user of your application
+- **Auth Provider** – Either a social login provider (Google, Twitter, etc.) or an email address where One Time Passwords (OTPs) are sent for authentication.
+- **Wallet** – The public/private keypair generated for the user, attached to their auth provider (email, Twitter account, etc).
+- **Passkey** – How the user signs transactions with their wallet. This is how the user manages fully custody of their wallet.
+
+Now let's dig deeper into each piece to learn how it all fits together.
+
+## User
+
+This is a record on Snowball's servers. It represents a user of your onchain application. The fields of a user record include:
+
+- `uid` – A unique string identifier
+- `created_at` – The unix timestamp of when the user was created
+
+## Auth Provider
+
+An auth provider is how a user authenticates themselves.
+
+Currently Snowball only supports email auth. Social auth and phone number auth are coming soon.
+
+### Wallet Generation
+
+The first time your user connects their auth provider to your Snowball Build Account, a wallet keypair is securely generated for them.
+
+Every time the user logs in after that, Snowball recognizes the user and returns their wallet public key.
+
+<aside>
+
+For security details about how Snowball does wallet generation, and how Snowball ensures it never has access to your user's private keys,
+see our [Security: Embedded Wallets](/docs/security/embedded-wallets) docs.
+
+</aside>
+
+## Wallet
+
+A generated wallet (derived from an auth provider + Snowball Build Account) is a fully-functioning Ethereum account.
+It has both a public key (address) and a private key.
+
+</template>
