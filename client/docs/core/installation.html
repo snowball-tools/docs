@@ -25,10 +25,11 @@ Once you have an API key, creating a snowball instance will look similar to the 
 ```js
 import { Snowball, SnowballChain } from '@snowballtools/js-sdk';
 
-export const snowball = Snowball
+const snowball = Snowball
   .withAuth({
     google: ...,
     passkey: ...,
+    // etc.
   })
   .withSmartWallet(...) // Optional
   .create({
@@ -42,6 +43,17 @@ export const snowball = Snowball
 See the next several sections for more information on how to configure the `withAuth` and `withSmartWallet` options.
 
 </aside>
+
+
+## Next Steps
+
+- To see a fully working example:
+  - Try out the <a href="https://in-app-wallets.snowball-examples.com" target="_blank">In-App Wallets Example</a>, along with its [code walkthrough](https://github.com/snowball-tools/showcase.in-app-wallets#readme).
+
+- To learn more about in-app wallets:
+  - See the [In-App Wallets Guide](/docs/in-app-wallets/introduction).
+
+To learn more about Snowball SDK itself, click the next button below.
 
 
 </template>

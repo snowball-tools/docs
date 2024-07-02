@@ -1,10 +1,10 @@
-<page title="Embedded Wallets: Concepts" layout="/_layout.html">
+<page title="In-App Wallets: Concepts" layout="/_layout.html">
 
 <template type="docs-page">
 
-# Embedded Wallets: Concepts
+# In-App Wallets: Concepts
 
-Before diving into the technical details of embedded wallets, let's go over how your application interacts with Snowball's embedded wallets
+Before diving into the technical details of in-app wallets, let's go over how your application interacts with Snowball-style in-app wallets
 at a high level.
 
 Below are the four core moving pieces:
@@ -13,8 +13,8 @@ Below are the four core moving pieces:
 
 - **User** – A user of your application
 - **Auth Provider** – Either a social login provider (Google, Twitter, etc.) or an email address where One Time Passwords (OTPs) are sent for authentication.
-- **Wallet** – The public/private keypair generated for the user, attached to their auth provider (email, Twitter account, etc).
-- **Passkey** – How the user signs transactions with their wallet. This is how the user manages fully custody of their wallet.
+- **Wallet** – The public/private keypair generated for the user, assicated via their auth provider (email, Twitter account, etc).
+- **Passkey** – The mechanism in which the user signs on-chain transactions via their wallet. This is how the user maintains fully custody of their wallet.
 
 Now let's dig deeper into each piece to learn how it all fits together.
 
@@ -40,7 +40,7 @@ Every time the user logs in after that, Snowball recognizes the user and returns
 <aside>
 
 For security details about how Snowball does wallet generation, and how Snowball ensures it never has access to your user's private keys,
-see our [Security: Embedded Wallets](/docs/security/embedded-wallets) docs.
+see our [Security: In-App Wallets](/docs/security/in-app-wallets) docs.
 
 </aside>
 

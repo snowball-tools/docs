@@ -12,14 +12,12 @@ import { Snowball, SnowballChain } from '@snowballtools/js-sdk';
 
 const snowball = Snowball
   .withAuth({
-    google: ...,
+    passkey: ...,
   })
   .create({
     apiKey: 'your-snowball-api-key',
     initialChain: SnowballChain.sepolia,
   })
-
-
 ```
 
 Once you have this instance, you have access to several functions that will be useful for integrating Snowball into your application.
