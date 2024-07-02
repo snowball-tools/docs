@@ -24,9 +24,26 @@ const snowball = Snowball
 
 Once you have this instance, you have access to several functions that will be useful for integrating Snowball into your application.
 
+## `Snowball.withAuth(...).create()`
+
+This is the main entry point for creating a Snowball instance. Options are:
+
+```js
+.create({
+  /** Your API key from your https://snowball.build project */
+  apiKey: string,
+
+  /** The initial chain to use, e.g. SnowballChain.mainnet */
+  initialChain: SnowballChain
+
+  /** (optional) Whether or not to enable server-side rendering mode (generally YES if react) */
+  ssrMode?: boolean
+})
+```
+
 ## `snowball.chain`
 
-Gets an instance of a SnowballChain, which represents the current chain (mainnet, sepolia, etc.) that the user is interacting with.
+Gets an instance of a SnowballChain, which represents the current chain that the user is interacting with.
 
 ```js
 const chain = snowball.chain
@@ -34,7 +51,7 @@ const chain = snowball.chain
 
 ## `snowball.switchChain(newChain)`
 
-Switch to a new SnowballChain, which represents the current chain that the user is interacting with.
+Switch to a new SnowballChain, which will be the current chain that the user is interacting with.
 
 ```js
 import { SnowballChain } from '@snowballtools/js-sdk'
@@ -54,6 +71,17 @@ For example, if you defined `passkey: ...` in the `withAuth` function, you can a
 const passkeyAuth = snowball.auth.passkey
 ```
 
-This value will be typed to the specific auth provider that you defined in the `withAuth` function.
+This value will be typed to the specific auth provider that you defined in the `withAuth` function, such as [In-App Wallet Auth](/docs/in-app-wallets/introduction)
+
+## `snowball.initUserSessions()`
+
+(Internal-ish) Only relevant when Snowball initialized with `ssrMode: true`.
+
+Attempts to initialized any active sessions for the auths that were provided. Necessary to call at specific times when working with server-side rendering + hydration apps that must have equal html between ssr and first client render, such as Next.js.
+
+## `snowball.subscribe(callback)`
+
+Subscribe to changes in the Snowball instance. This is useful for updating your UI when the user's auth state changes.
+
 
 </template>

@@ -4,13 +4,13 @@
 
 # Getting Started
 
-To get started with embedded wallets, first install the dependencies:
+To get started with in-app wallets, first install the dependencies:
 
 ```bash
-npm install @snowballtools/js-sdk @snowballtools/auth-wallets
+npm install @snowballtools/js-sdk @snowballtools/auth-embedded
 ```
 
-Then initialize Snowball with the embedded wallets feature:
+Then initialize Snowball with the EmbeddedAuth configuration:
 
 ```js
 import { Snowball, SnowballChain } from '@snowballtools/js-sdk'
@@ -19,14 +19,42 @@ import { EmbeddedAuth } from '@snowballtools/auth-embedded'
 export const snowball = Snowball.withAuth({
   embedded: EmbeddedAuth.configure({
     auth: { email: true }
-    passkeys: {
-      rpid: 'localhost' // example.com in production
-    }
   })
 }).create({
   apiKey: 'your-snowball-api-key',
   initialChain: SnowballChain.sepolia
 })
 ```
+
+Then grab a handle to your auth (for convenience):
+
+```js
+const auth = snowball.auth.embedded
+```
+
+Now you can check auth status, create accounts, passkeys, and login:
+
+```js
+auth.state.name
+  //=> 'initializing' on app load
+  //=> 'no-session' if no session is found
+  //=> 'waiting-for-otp' after sending an OTP, waiting for user to enter it
+  //=> 'authenticated-no-passkey' after user enters OTP and has no passkey
+  //=> 'wallet-ready' after a user has created a passkey
+
+auth.state.loading //=> true if any state is loading
+auth.state.error   //=> any error that occurred
+
+auth.wallet  //=> a Viem wallet client if auth.state === 'wallet-ready'; null otherwise
+
+auth.sendOtp({ email })      //=> send an OTP to the user's email
+auth.verifyOtp({ code })     //=> verify the sent OTP code; signs the user in
+auth.createPasskey({ name }) //=> create a passkey & wallet for the user
+
+auth.login()  //=> login the user if they already have a passkey
+auth.logout() //=> logout the user
+```
+
+For a complete example of In-App Wallets, see the [example app](https://in-app-wallets.snowball-examples.com) and its [source code](https://github.com/snowball-tools/showcase.in-app-wallets).
 
 </template>
