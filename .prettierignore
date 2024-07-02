@@ -1,3 +1,4 @@
 client/index.html
+client/_layout.html
 client/_sidebar.html
 client/docs/**/*.html
