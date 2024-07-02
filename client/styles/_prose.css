@@ -112,6 +112,9 @@ h6:hover a.header-anchor {
 nav.table-of-contents {
   font-size: 14px;
 }
+nav.table-of-contents ul {
+  margin-top: 0;
+}
 nav.table-of-contents ul li a {
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
