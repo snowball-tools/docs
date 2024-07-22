@@ -1,8 +1,8 @@
 import * as Docs from './lib/docs'
 
 export default {
-  name: 'Snowballtools Docs – A free, advanced course for Solidity Developers',
-  origin: 'https://docs.snowballtools.xyz',
+  name: 'Snowballtools Docs',
+  origin: 'https://docs.snowball.build',
   locales: ['en'],
 
   static: true,
